@@ -30,22 +30,25 @@ export const ProjectsPage: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-12">
       {/* Page Header */}
       <div className="space-y-4 max-w-3xl">
-        <Badge variant="emerald">Featured Project Showcase</Badge>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-graphite-100 tracking-tight">
-          Engineered solutions,{' '}
+        <Badge variant="emerald">Curated Showcase</Badge>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-graphite-100 tracking-tight leading-tight">
+          Featured Projects &{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300">
-            from concept to deployment.
+            System Architecture.
           </span>
         </h1>
         <p className="text-base sm:text-lg text-graphite-300 leading-relaxed font-normal">
-          A curated portfolio of three core engineering projects spanning enterprise full-stack web platforms, interactive client-side cybersecurity tools, and desktop architecture. Each project card features verified technologies, source repository links, and an in-depth architectural case study.
+          Hands-on software engineering across enterprise full-stack platforms, interactive cryptography tools, and desktop applications. Each project card includes verified technologies, source code repositories, and comprehensive architectural case studies.
         </p>
       </div>
 
       {/* Filter and Search Bar */}
       <div className="p-4 rounded-xl bg-graphite-900 border border-graphite-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-        {/* Category Pills */}
+        {/* Category Filter Pills */}
         <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+          <span className="text-xs font-mono text-graphite-500 mr-1 hidden sm:inline">
+            Domain:
+          </span>
           {categories.map((category) => (
             <button
               key={category}
