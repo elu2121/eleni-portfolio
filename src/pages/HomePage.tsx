@@ -21,7 +21,7 @@ import { ProjectCard } from '../components/common/ProjectCard';
 import { GithubIcon } from '../components/common/SocialIcons';
 
 export const HomePage: React.FC = () => {
-  const featuredProjects = projectsData.filter((p) => p.featured).slice(0, 3);
+  const featuredProjects = projectsData.filter((p) => p.featured).slice(0, 6);
   const featuredServices = servicesData.slice(0, 3);
 
   return (

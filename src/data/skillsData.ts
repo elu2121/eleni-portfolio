@@ -19,12 +19,15 @@ export const skillsCategories = [
       { name: "React", category: "frontend", note: "Functional components, custom hooks, modular UI" },
       { name: "TypeScript", category: "frontend", note: "Strict typing, interfaces, generics, type safety" },
       { name: "JavaScript (ES6+)", category: "frontend", note: "Modern syntax, async/await, DOM APIs" },
+      { name: "C# & .NET Core", category: "backend", note: "OOP architecture, ASP.NET Core Web API, WPF desktop applications" },
+      { name: "ASP.NET Core & EF Core", category: "backend", note: "Enterprise REST APIs, Entity Framework Core, SQL Server" },
+      { name: "Java", category: "backend", note: "Core OOP, file I/O streams, data structures, robust console architectures" },
       { name: "Tailwind CSS", category: "frontend", note: "Utility-first design, tokens, responsive layouts" },
       { name: "HTML5 & Semantic Markup", category: "frontend", note: "Accessible, SEO-friendly document structures" },
       { name: "CSS3 & Responsive Design", category: "frontend", note: "Flexbox, Grid, media queries, animations" },
       { name: "REST APIs", category: "backend", note: "API design, endpoint integration, payload contracts" },
       { name: "Node.js & Express", category: "backend", note: "Server logic, middleware, JSON endpoints" },
-      { name: "PostgreSQL", category: "database", note: "Relational queries, schemas, relationships" },
+      { name: "SQL Server & PostgreSQL", category: "database", note: "Relational queries, schema design, constraints, migrations" },
       { name: "Git & GitHub", category: "tools-devops", note: "Branch workflows, PRs, version control hygiene" }
     ] as SkillItem[]
   },
@@ -34,11 +37,12 @@ export const skillsCategories = [
     badge: "Active Growth",
     description: "Technologies I am currently studying, implementing in labs, or expanding my depth in.",
     skills: [
+      { name: "Kotlin & Gradle", category: "backend", note: "JVM build automation, modular libraries, Android development fundamentals" },
       { name: "NestJS", category: "backend", note: "Modular architecture, dependency injection, decorators" },
       { name: "Prisma ORM", category: "database", note: "Type-safe database modeling, migrations" },
       { name: "MySQL", category: "database", note: "Relational modeling, indexing, query optimization" },
       { name: "Software Testing & QA", category: "testing", note: "Unit testing, integration testing, test-driven flow" },
-      { name: "Web Application Security", category: "tools-devops", note: "Defensive coding, OWASP Top 10 mitigation" }
+      { name: "Web Application Security", category: "tools-devops", note: "Web Crypto API, defensive coding, OWASP Top 10 mitigation" }
     ] as SkillItem[]
   },
   {

@@ -8,7 +8,9 @@ export const ProjectsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  const categories = ['All', 'Full-Stack', 'Cybersecurity & Tools'];
+  const categories = useMemo(() => {
+    return ['All', ...Array.from(new Set(projectsData.map((p) => p.category)))];
+  }, []);
 
   const filteredProjects = useMemo(() => {
     return projectsData.filter((project) => {

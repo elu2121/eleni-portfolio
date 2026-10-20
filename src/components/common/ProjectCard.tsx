@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ExternalLink, Layers, ShieldCheck, Terminal } from 'lucide-react';
+import { ArrowRight, Code2, ExternalLink, Layers, Monitor, Server, ShieldCheck, Terminal } from 'lucide-react';
 import type { ProjectItem } from '../../types';
 import { Badge } from './Badge';
 import { GithubIcon } from './SocialIcons';
@@ -14,6 +14,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   // Select distinct icon graphic based on category
   const renderVisualHeader = () => {
     const isCyber = project.category === 'Cybersecurity & Tools';
+    const isDesktop = project.category === 'Desktop & Enterprise';
+    const isSystems = project.category === 'Systems & Backend';
+    const isFrontend = project.category === 'Frontend';
     const isInternship = project.status === 'Internship Project';
 
     return (
@@ -40,6 +43,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <div className="w-12 h-12 rounded-xl bg-graphite-800/90 border border-graphite-700 flex items-center justify-center text-emerald-400 shadow-md group-hover:border-emerald-500/50 group-hover:scale-105 transition-all">
             {isCyber ? (
               <ShieldCheck className="w-6 h-6" />
+            ) : isDesktop ? (
+              <Monitor className="w-6 h-6" />
+            ) : isSystems ? (
+              <Server className="w-6 h-6" />
+            ) : isFrontend ? (
+              <Code2 className="w-6 h-6" />
             ) : isInternship ? (
               <Terminal className="w-6 h-6" />
             ) : (

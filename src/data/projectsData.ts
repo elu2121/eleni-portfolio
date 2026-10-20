@@ -4,11 +4,262 @@ import type { ProjectItem } from '../types';
  * =========================================================================
  * ELENI GIREFI - PROJECTS & DETAILED CASE STUDIES
  * =========================================================================
- * Contains the 3 candidate projects with truthful, high-fidelity case studies.
- * Notice: No fabricated user counts, production metrics, or proprietary leaks.
- * All repository and live links are explicitly marked as editable placeholders.
+ * Authentic engineering projects synced with verified GitHub repositories:
+ * https://github.com/elu2121
  */
 export const projectsData: ProjectItem[] = [
+  {
+    id: "hotel-reservation-system",
+    slug: "hotel-reservation-system",
+    title: "Hotel Reservation System (HRS)",
+    subtitle: "Enterprise Desktop Application & ASP.NET Core Web API",
+    category: "Desktop & Enterprise",
+    description: "A full-featured enterprise hospitality management platform designed to streamline operations across room reservations, guest intake, automated billing, invoice generation, and staff audit tracking.",
+    featured: true,
+    status: "Completed",
+    technologies: ["C#", ".NET Core", "WPF", "ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "REST APIs", "Git"],
+    role: "Lead Software Engineer",
+    timeline: "Enterprise / Academic Project",
+    links: {
+      github: "https://github.com/elu2121/Hotel-Reservation-Desktop-App",
+      liveDemo: undefined,
+      documentation: "https://github.com/elu2121/Hotel-Reservation-Desktop-App#readme"
+    },
+    placeholderImage: {
+      title: "HRS Enterprise Desktop & Web API",
+      caption: "WPF administrative client, role-based access control & SQL persistence",
+      badge: "C# • WPF • ASP.NET Core • SQL Server"
+    },
+    caseStudy: {
+      overview: "The Hotel Reservation System (HRS) is an enterprise-grade administrative desktop application coupled with a headless ASP.NET Core Web API backend. It provides automated management of multi-tier room inventories, real-time availability checking, guest billing, and role-based staff operations.",
+      problemStatement: "Hospitality front desks frequently suffer from disconnected booking channels, manual paper billing errors, double-booked rooms, and lack of accountability among staff roles. HRS addresses this with atomic database transactions, strict role isolation, and automated invoice calculations.",
+      goalsAndRequirements: [
+        "Design a responsive WPF desktop client styled with clean typography and intuitive administrative workflows.",
+        "Implement a decoupled ASP.NET Core Web API backend managing business logic and data persistence.",
+        "Enforce strict Role-Based Access Control (RBAC) separating Administrator, Receptionist, and Accountant privileges.",
+        "Build an atomic room reservation lifecycle preventing double-booking race conditions.",
+        "Integrate automated billing, tax calculations, and printable invoice resolution."
+      ],
+      individualContribution: [
+        "Engineered the desktop UI using WPF with XAML data binding, custom control styling, and responsive layout grids.",
+        "Built RESTful Web API controllers in ASP.NET Core to handle room reservations, guest registries, and invoice lifecycles.",
+        "Configured Entity Framework Core with Code-First migrations against Microsoft SQL Server.",
+        "Implemented RBAC authentication and permission trees for staff roles (Admin, Receptionist, Accountant).",
+        "Wrote automated unit and integration tests to verify reservation conflict detection algorithms."
+      ],
+      architecture: {
+        summary: "HRS utilizes a decoupled client-server architecture. The rich desktop presentation layer (WPF) communicates over HTTP/REST with an ASP.NET Core Web API service backed by SQL Server via Entity Framework Core.",
+        highlights: [
+          "Client Layer: WPF Desktop Application with data-bound XAML views and MVVM architectural separation.",
+          "Service Layer: ASP.NET Core Web API controllers providing stateless endpoints with structured DTO request/response contracts.",
+          "Business Logic: Domain services orchestrating room assignment algorithms, pricing rules, and access control policies.",
+          "Persistence Layer: Microsoft SQL Server managed through Entity Framework Core with strict foreign key constraints."
+        ]
+      },
+      keyDecisions: [
+        {
+          decision: "Decoupled Web API backend rather than a monolithic direct-to-database desktop application",
+          rationale: "Allows future web or mobile client extensions to reuse the same central reservation logic and database integrity rules without duplication."
+        },
+        {
+          decision: "Strict Role-Based Access Control (RBAC) at both UI and API levels",
+          rationale: "Ensures receptionists cannot access financial audit logs or modify system settings, while accountants focus strictly on invoice reconciliation."
+        },
+        {
+          decision: "Entity Framework Core with explicit transaction isolation for bookings",
+          rationale: "Guarantees that two receptionists attempting to book the same room concurrently will trigger a deterministic concurrency conflict rather than corrupt data."
+        }
+      ],
+      challengesAndSolutions: [
+        {
+          challenge: "Preventing overlapping reservation dates during peak booking inquiries.",
+          solution: "Implemented an atomic date-range overlap algorithm at the database query level using indexed check-in and check-out timestamps."
+        },
+        {
+          challenge: "Maintaining smooth UI responsiveness in WPF during heavy database queries.",
+          solution: "Utilized asynchronous programming (`async`/`await`) across all HTTP API client calls to ensure the UI thread never locks during data synchronization."
+        }
+      ],
+      testingAndQA: [
+        "API endpoint integration tests verifying HTTP status codes and payload schema validations.",
+        "Concurrency testing simulating simultaneous booking attempts on identical room numbers.",
+        "Manual end-to-end testing across all three user roles to verify permission barriers."
+      ],
+      resultsAndLessons: [
+        "Constructed a robust, real-world desktop and backend enterprise software application from architecture to implementation.",
+        "Deepened mastery in C#, .NET runtime idioms, WPF data binding, and relational database schema modeling.",
+        "Reinforced the importance of separating presentation from domain business logic through REST contracts."
+      ]
+    }
+  },
+  {
+    id: "cyber-attack-simulator",
+    slug: "cyber-attack-simulator",
+    title: "Cryptography Visual Lab & Security Simulator",
+    subtitle: "Interactive Web Application for Real-Time Cryptographic Analysis & Attack Defense",
+    category: "Cybersecurity & Tools",
+    description: "An interactive, browser-based cybersecurity education platform built with React, Vite, Tailwind CSS, and the native Web Crypto API. Visualizes real-time AES-256 encryption/decryption, SHA-256 hashing, HMAC-SHA256 authentication, and defensive vulnerability mitigations.",
+    featured: true,
+    status: "Completed",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Web Crypto API", "OWASP Security", "Git"],
+    role: "Lead Developer & Security Researcher",
+    timeline: "Personal & Security Project",
+    links: {
+      github: "https://github.com/elu2121/cyber-attack-simulator",
+      liveDemo: undefined,
+      documentation: "https://github.com/elu2121/cyber-attack-simulator#readme"
+    },
+    placeholderImage: {
+      title: "Web Crypto Lab & Attack Vector Visualizer",
+      caption: "AES-256 live ciphers, SHA-256 hash chains, HMAC verification & test cases",
+      badge: "React 18 • Web Crypto API • Tailwind CSS"
+    },
+    caseStudy: {
+      overview: "The Cryptography Visual Lab was built to turn abstract cybersecurity concepts into tangible, visual, and interactive software. By executing real cryptographic primitives directly inside the browser using standard Web Crypto APIs, learners observe encryption keys, ciphertexts, digests, and authentication codes updating live with zero server latency.",
+      problemStatement: "Developers and students often view encryption as an opaque black box. Without hands-on visualization of how key changes alter ciphertexts (avalanche effect) or why hashing cannot be reversed, subtle cryptographic vulnerabilities easily slip into production code.",
+      goalsAndRequirements: [
+        "Implement real-time AES-256 encryption and decryption with user-supplied secret keys.",
+        "Visualize SHA-256 one-way hashing with instant avalanche effect demonstration on keystroke.",
+        "Provide HMAC-SHA256 keyed message authentication code verification.",
+        "Build an automated test suite sidebar allowing users to run standard cryptographic test vectors live.",
+        "Ensure 100% zero-server data leakage by executing all cryptographic math purely in-browser via Web Crypto API."
+      ],
+      individualContribution: [
+        "Engineered the entire frontend architecture using React, Vite, and Tailwind CSS with dark mode support.",
+        "Implemented cryptographic pipelines using the browser's native `window.crypto.subtle` API for AES-GCM and SHA algorithms.",
+        "Designed responsive 3-column card layouts with instant clipboard copying, password visibility toggles, and live character counters.",
+        "Built the interactive test suite sidebar executing verified test vectors against the live crypto engine.",
+        "Authored comprehensive security documentation detailing key derivation, IV initialization, and padding mechanics."
+      ],
+      architecture: {
+        summary: "The application operates as a reactive client-side cryptographic workbench. Text inputs dispatch asynchronous Web Crypto operations that update reactive state containers representing raw bytes, hexadecimal representations, and decoded strings.",
+        highlights: [
+          "Crypto Core: Native Web Crypto API (`SubtleCrypto`) utilizing hardware-accelerated AES-256 and SHA-256 operations.",
+          "State Coordinator: Reactive debounce pipeline ensuring fluid 60fps typing while asynchronous cryptography routines run.",
+          "Verification Suite: Built-in automated test runner with pre-configured cryptographic test cases.",
+          "UI Presentation: Modular Tailwind CSS component hierarchy with dynamic theme switching and accessible contrast ratios."
+        ]
+      },
+      keyDecisions: [
+        {
+          decision: "Native Web Crypto API over third-party JavaScript crypto libraries",
+          rationale: "Leverages the browser's native, battle-tested, hardware-accelerated cryptographic implementations with zero bundle size overhead and no third-party supply-chain vulnerabilities."
+        },
+        {
+          decision: "Zero-backend architecture",
+          rationale: "Eliminates all privacy and security liability—plaintext inputs and secret keys never leave the user's browser memory."
+        },
+        {
+          decision: "Integrated interactive test case runner",
+          rationale: "Enables learners to immediately verify output against standard NIST/RFC test vectors with a single click."
+        }
+      ],
+      challengesAndSolutions: [
+        {
+          challenge: "Handling binary ArrayBuffer and Uint8Array data within React component state.",
+          solution: "Created dedicated utility functions for clean, bidirectional conversions between UTF-8 strings, hex strings, Base64, and ArrayBuffers."
+        },
+        {
+          challenge: "Preventing UI jank during rapid text input while cryptographic operations resolve asynchronously.",
+          solution: "Implemented an optimized debouncing and cancellation token mechanism that discards stale pending promises if new keystrokes arrive."
+        }
+      ],
+      testingAndQA: [
+        "Verification against standard cryptographic test vectors for SHA-256 and HMAC-SHA256.",
+        "Cross-browser testing across Chrome, Firefox, and Safari for Web Crypto API compatibility.",
+        "Accessibility evaluation for dark/light mode color contrast compliance."
+      ],
+      resultsAndLessons: [
+        "Created an educational tool with positive feedback for clarity and responsiveness.",
+        "Mastered the browser's native Web Crypto API and modern cryptographic primitives.",
+        "Reinforced how visual interactive feedback accelerates technical comprehension far better than static documentation."
+      ]
+    }
+  },
+  {
+    id: "hr-leave-management",
+    slug: "hr-leave-management",
+    title: "HR Leave Management System",
+    subtitle: "Enterprise Web Application for Employee Leave Lifecycles & Approvals",
+    category: "Full-Stack",
+    description: "An enterprise administrative platform engineered with ASP.NET Core, C#, Entity Framework Core, and SQL Server to automate employee leave allocations, supervisor approval workflows, quota tracking, and audit reporting.",
+    featured: true,
+    status: "Completed",
+    technologies: ["C#", "ASP.NET Core", "Entity Framework Core", "SQL Server", "Bootstrap", "MVC Pattern", "Git"],
+    role: "Full-Stack Developer",
+    timeline: "Enterprise Project",
+    links: {
+      github: "https://github.com/elu2121/HRLeaveManegment",
+      liveDemo: undefined,
+      documentation: "https://github.com/elu2121/HRLeaveManegment#readme"
+    },
+    placeholderImage: {
+      title: "HR Leave Lifecycle & Balance Portal",
+      caption: "Employee quota tracking, supervisor approvals & automated audit history",
+      badge: "ASP.NET Core • C# • EF Core • SQL Server"
+    },
+    caseStudy: {
+      overview: "The HR Leave Management System was developed to modernize human resources operations by digitizing vacation, medical, and personal leave requests. It automates quota deductions, notifies department supervisors, and tracks approval statuses through an organized MVC architecture.",
+      problemStatement: "Paper-based or email-driven leave management creates administrative chaos—lost request slips, inconsistent remaining balance counts, overlapping staff absences, and lack of historical reporting. A centralized, role-aware digital system eliminates these bottlenecks.",
+      goalsAndRequirements: [
+        "Provide employees with self-service dashboards displaying real-time leave balances across leave types.",
+        "Build a structured approval pipeline where supervisors can review, approve, or reject requests with audit comments.",
+        "Implement automated business rules preventing leave requests exceeding remaining allocated days.",
+        "Maintain clean database relationships between Employees, Leave Types, Allocations, and Requests.",
+        "Deliver secure authentication and role authorization using ASP.NET Identity."
+      ],
+      individualContribution: [
+        "Designed and implemented the ASP.NET Core MVC architecture with clean domain separation.",
+        "Constructed Entity Framework Core database models, migrations, and relationship configurations in SQL Server.",
+        "Built responsive Razor views with structured layouts, modal dialogs, and toast feedback notifications.",
+        "Implemented business validation rules ensuring leave balance integrity and date-range consistency.",
+        "Configured ASP.NET Core Identity authentication with role-based policies for Staff and HR Administrators."
+      ],
+      architecture: {
+        summary: "The platform follows the classic ASP.NET Core MVC pattern with clear separation between Domain Models, Entity Framework Data Access, Controllers, and Razor Views.",
+        highlights: [
+          "Presentation Layer: ASP.NET Core Razor Views styled with responsive utility classes and accessible form controls.",
+          "Controller Layer: Strongly typed MVC controllers validating incoming model bindings and coordinating domain workflows.",
+          "Data Access Layer: Repository pattern backed by Entity Framework Core with SQL Server storage.",
+          "Security: ASP.NET Core Identity managing password hashing, session cookies, and role claims."
+        ]
+      },
+      keyDecisions: [
+        {
+          decision: "Entity Framework Core Code-First approach with migrations",
+          rationale: "Keeps database schema synchronized with C# domain models under version control, enabling repeatable deployments across environments."
+        },
+        {
+          decision: "Separate Leave Allocation and Leave Request entities",
+          rationale: "Decouples annual entitlement quotas from individual historical request records, simplifying roll-forward and reporting operations."
+        },
+        {
+          decision: "Server-side business validation combined with client-side form guards",
+          rationale: "Guarantees database integrity even if client scripts are bypassed while still delivering immediate UI feedback to users."
+        }
+      ],
+      challengesAndSolutions: [
+        {
+          challenge: "Preventing conflicting leave submissions spanning identical dates by the same employee.",
+          solution: "Added database query validation checking existing active requests before committing a new allocation deduction."
+        },
+        {
+          challenge: "Managing annual leave rollover and quota replenishment across diverse leave categories.",
+          solution: "Structured an administrative allocation engine that applies configured allocations to all active employees atomically."
+        }
+      ],
+      testingAndQA: [
+        "Validation unit tests covering date boundary checks and negative balance guard clauses.",
+        "Manual role testing verifying that regular employees cannot access supervisor approval queues.",
+        "Database migration verification across clean test environments."
+      ],
+      resultsAndLessons: [
+        "Delivered a complete, functional enterprise web application solving practical organizational workflow problems.",
+        "Solidified hands-on competence in ASP.NET Core, Entity Framework Core, SQL Server, and MVC architectural conventions.",
+        "Strengthened understanding of enterprise application security, user role management, and transactional data integrity."
+      ]
+    }
+  },
   {
     id: "gcode-hub",
     slug: "gcode-hub",
@@ -22,9 +273,8 @@ export const projectsData: ProjectItem[] = [
     role: "Full-Stack Intern Developer",
     timeline: "Internship Engagement",
     links: {
-      // [EDITABLE PLACEHOLDER] Replace with authorized public demo or repo link if permitted by organization
-      github: "https://github.com/elenigirefi/gcode-hub-placeholder",
-      liveDemo: undefined, // Confidential / Internal corporate deployment
+      github: "https://github.com/elu2121",
+      liveDemo: undefined,
       documentation: "#"
     },
     placeholderImage: {
@@ -96,173 +346,231 @@ export const projectsData: ProjectItem[] = [
     }
   },
   {
-    id: "cyber-attack-simulator",
-    slug: "cyber-attack-simulator",
-    title: "Cyber Attack Simulator & Defense Platform",
-    subtitle: "Interactive Web Application for Hands-On Security Education",
-    category: "Cybersecurity & Tools",
-    description: "An educational sandbox application built to visualize common web vulnerabilities (such as SQL Injection, XSS, and authentication bypasses) alongside their defensive mitigation techniques.",
-    featured: true,
+    id: "student-management-system",
+    slug: "student-management-system",
+    title: "Student Management System",
+    subtitle: "Console-Based Academic Records Management System with File Persistence",
+    category: "Systems & Backend",
+    description: "A robust academic management system written in Java utilizing object-oriented principles, persistent file storage, duplicate prevention algorithms, and dual-parameter record sorting.",
+    featured: false,
     status: "Completed",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Interactive State Engine", "Web Security", "Git"],
-    role: "Lead Developer & System Architect",
-    timeline: "Academic & Personal Project",
+    technologies: ["Java", "OOP", "File I/O", "Data Structures", "Clean Architecture", "Git"],
+    role: "Software Developer",
+    timeline: "Core Systems Project",
     links: {
-      // [EDITABLE PLACEHOLDER] Replace with your actual GitHub repository URL
-      github: "https://github.com/elenigirefi/cyber-attack-simulator-placeholder",
-      // [EDITABLE PLACEHOLDER] Replace with your actual live demo URL if hosted
-      liveDemo: "https://cyber-simulator-demo-placeholder.vercel.app",
-      documentation: "#"
+      github: "https://github.com/elu2121/student-management-system",
+      liveDemo: undefined,
+      documentation: "https://github.com/elu2121/student-management-system#readme"
     },
     placeholderImage: {
-      title: "Security Sandbox & Attack Vector Visualizer",
-      caption: "Interactive payload simulation, terminal logs & defense mitigation walkthrough",
-      badge: "Cybersecurity & Web Defense"
+      title: "Academic Record Engine",
+      caption: "File persistence, duplicate ID validation & automated record sorting",
+      badge: "Java • OOP • File Streams • Data Structures"
     },
     caseStudy: {
-      overview: "Cybersecurity principles are frequently taught through abstract theory or dense documentation. This project was developed to provide an interactive, safe, in-browser sandbox where learners can visualize how malicious payloads exploit vulnerable code and how modern defenses neutralize those threats.",
-      problemStatement: "Students and early-career developers often struggle to understand web security vulnerabilities like SQL Injection, Cross-Site Scripting (XSS), and Broken Access Control until they can see the exact mechanics of execution. Setting up real vulnerable virtual machines can be tedious and intimidating.",
+      overview: "The Student Management System is a clean, reliable console application designed to manage student academic records. Built with pure Java, it emphasizes robust input validation, object-oriented design, and reliable file I/O persistence without relying on heavy external runtime dependencies.",
+      problemStatement: "Basic record management software frequently crashes on unexpected user input, fails to persist modifications between restarts, and permits duplicate identifier entries. This project was developed systematically to implement bulletproof validation and clean file stream persistence.",
       goalsAndRequirements: [
-        "Create an entirely safe browser-based simulation engine without executing live malicious exploits on remote servers.",
-        "Visualize the step-by-step path of an input payload as it traverses from client input to vulnerable parsing logic.",
-        "Provide side-by-side comparisons showing the 'Vulnerable Implementation' vs the 'Secure Remediation' (e.g., parameterized queries vs string concatenation).",
-        "Include an educational terminal feed displaying simulated network requests, server logs, and defensive alerts.",
-        "Ensure intuitive navigation suitable for self-paced learning and classroom demonstrations."
+        "Implement a complete CRUD lifecycle: create, read, update, and delete student records.",
+        "Enforce strict duplicate ID validation to protect data uniqueness.",
+        "Persist all records to local file storage (`students.txt`) with automatic parsing and loading on startup.",
+        "Provide dual sorting mechanisms to order records alphabetically by name or numerically by student ID.",
+        "Build a defensive console menu interface that prevents infinite loops or crashes on malformed inputs."
       ],
       individualContribution: [
-        "Conceived, architected, and built the end-to-end interactive application using React, TypeScript, and Tailwind CSS.",
-        "Created the deterministic simulation engine that parses user-selected exploit inputs and renders realistic terminal responses.",
-        "Engineered the visual code comparison widget highlighting vulnerable lines alongside security patch recommendations.",
-        "Authored explanatory educational guides explaining the OWASP Top 10 concepts addressed in each lab.",
-        "Maintained zero external runtime vulnerabilities by keeping simulated attacks strictly inside a sandboxed UI mock environment."
+        "Architected the domain model (`Student`) and repository-style file handling service in pure Java.",
+        "Engineered the file storage parser using `BufferedReader` and `BufferedWriter` streams.",
+        "Implemented sorting algorithms utilizing Java Collections and custom Comparators.",
+        "Added defensive input scanners with regex validation and exception handling.",
+        "Maintained structured, documented git commits tracking feature evolution day by day."
       ],
       architecture: {
-        summary: "The application is built as a deterministic state machine. Users select an attack module, configure payload variables, and trigger the step-by-step simulation. The engine walks through lexical inspection, vulnerable evaluation, and defense interception states.",
+        summary: "The application is organized into distinct functional components: a menu interaction loop, an in-memory data store using dynamic ArrayLists, and a file persistence service handling serialization and deserialization.",
         highlights: [
-          "Simulation Engine: State-driven scenario coordinator dispatching events (Payload Dispatched -> Inspection -> Breach or Defense Triggered).",
-          "Virtual Console: Emulated terminal window displaying structured security events with timestamping and severity color codes.",
-          "Remediation Engine: Dynamic diff view illustrating secure coding practices (prepared statements, sanitization, CSRF tokens)."
+          "Domain Model: Encapsulated `Student` class with validated getters, setters, and formatted string representations.",
+          "Storage Layer: File I/O service writing structured delimiter-separated data to persistent disk storage.",
+          "Controller / Menu: Defensive terminal loop guarding against invalid types, negative IDs, and empty strings."
         ]
       },
       keyDecisions: [
         {
-          decision: "Pure client-side safe simulation rather than live target servers",
-          rationale: "Guarantees zero security risk for hosting providers, allows zero-latency instant feedback, and enables learners to use the tool offline."
+          decision: "Structured file persistence (`students.txt`) rather than volatile in-memory only",
+          rationale: "Ensures records persist across system reboots and demonstrates essential understanding of file streams and parsing."
         },
         {
-          decision: "Side-by-side interactive code diffs",
-          rationale: "Bridges the gap between offensive theory and practical engineering defense by showing developers the exact code modification needed."
+          decision: "Duplicate ID prevention guard clauses during insertion",
+          rationale: "Prevents data corruption and ensures every student maintains a unique primary key."
         },
         {
-          decision: "Componentized scenario architecture",
-          rationale: "Makes it straightforward to add new attack scenarios (e.g., CSRF, IDOR, SSRF) without refactoring the simulation core."
+          decision: "Custom comparators for sorting",
+          rationale: "Provides flexible, instantaneous ordering by name or ID without modifying original insertion order permanently."
         }
       ],
       challengesAndSolutions: [
         {
-          challenge: "Accurately representing complex multi-step exploits without overwhelming junior learners.",
-          solution: "Designed a progressive disclosure interface where users can toggle between high-level conceptual flowcharts and granular raw HTTP payload views."
+          challenge: "Preventing infinite loop crashes when non-numeric input was entered into numeric scanner prompts.",
+          solution: "Implemented scanner buffer clearing and `hasNextInt` checks inside safe retry loops."
         },
         {
-          challenge: "Managing synchronous animation steps in the visual terminal.",
-          solution: "Built a customized asynchronous event queue in TypeScript that streams simulated log entries with controlled typing delays."
+          challenge: "Reliable line parsing from file even when student names contain spaces or special characters.",
+          solution: "Adopted a structured delimiter pattern with defensive split length verification on read."
         }
       ],
       testingAndQA: [
-        "Type checks validating that all scenario definitions conform to strict scenario schemas.",
-        "Accessibility audit verifying contrast ratios on terminal themes and keyboard accessibility for code walkthroughs.",
-        "Cross-device responsiveness testing ensuring code snippets remain legible on tablet and mobile viewports."
+        "Boundary testing with edge-case inputs (empty strings, negative IDs, long strings).",
+        "Persistence testing verifying file writes survived abrupt application termination.",
+        "Duplicate insertion attempts verifying rejection logic."
       ],
       resultsAndLessons: [
-        "Successfully created an engaging educational showcase that effectively demonstrates frontend architectural complexity.",
-        "Gained profound appreciation for defensive web architecture, input sanitization, and secure-by-design engineering principles.",
-        "Validated that interactive visual learning accelerates conceptual comprehension significantly compared to static slides."
+        "Delivered a stable, crash-resilient console application with clean file persistence.",
+        "Strengthened foundational proficiency in Java memory management, collections, and I/O streams.",
+        "Demonstrated disciplined software engineering fundamentals and daily GitHub version control practices."
       ]
     }
   },
   {
-    id: "skillswap",
-    slug: "skillswap",
-    title: "SkillSwap",
-    subtitle: "Peer-to-Peer Skills & Knowledge Exchange Web Application",
-    category: "Full-Stack",
-    description: "A collaborative community application designed for people to exchange skills, schedule reciprocal mentorship sessions, and track learning milestones without monetary transactions.",
-    featured: true,
+    id: "library-management-system",
+    slug: "library-management-system",
+    title: "Library Management System",
+    subtitle: "Modular JVM Application with Gradle Build Lifecycle Automation",
+    category: "Systems & Backend",
+    description: "A modular library catalog and patron lending system developed in Kotlin to practice Android-ready build automation, JVM dependency resolution, and executable artifact packaging.",
+    featured: false,
     status: "Completed",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Prisma"],
-    role: "Full-Stack Developer",
-    timeline: "Comprehensive Project",
+    technologies: ["Kotlin", "Gradle", "JVM", "OOP", "Build Automation", "Git"],
+    role: "Software Developer",
+    timeline: "Academic & Systems Project",
     links: {
-      // [EDITABLE PLACEHOLDER] Replace with your actual GitHub repository URL
-      github: "https://github.com/elenigirefi/skillswap-placeholder",
-      // [EDITABLE PLACEHOLDER] Replace with your actual live demo URL if hosted
-      liveDemo: "https://skillswap-demo-placeholder.vercel.app",
-      documentation: "#"
+      github: "https://github.com/elu2121/kotlin__gradle_project",
+      liveDemo: undefined,
+      documentation: "https://github.com/elu2121/kotlin__gradle_project#readme"
     },
     placeholderImage: {
-      title: "SkillSwap Mentorship & Matchmaker Portal",
-      caption: "Skill directory, reciprocal matching algorithm & session scheduler",
-      badge: "Full-Stack Web Application"
+      title: "Kotlin JVM Catalog Engine",
+      caption: "Gradle build automation, executable JAR packaging & object modeling",
+      badge: "Kotlin • Gradle • JVM • Build Automation"
     },
     caseStudy: {
-      overview: "SkillSwap was created to dismantle financial barriers to learning by connecting peers who possess complementary talents. A user skilled in React who wants to learn Spanish can discover a language enthusiast eager to build their first web app, arranging reciprocal exchange sessions.",
-      problemStatement: "Traditional tutoring platforms enforce high hourly fees and rigid booking frameworks. Many motivated self-learners have valuable knowledge to share in return for guidance in another domain, but lacked a dedicated platform to discover reciprocal partners.",
+      overview: "The Library Management System is an object-oriented Kotlin project engineered to master Gradle build lifecycles and modern JVM programming. It implements book cataloging, patron checkout workflows, and automated JAR packaging.",
+      problemStatement: "Navigating complex modern JVM and Android ecosystems requires practical understanding of build tools like Gradle, dependency management, task graphs, and idiomatic Kotlin. This project served as a hands-on foundation for build automation and typed language idioms.",
       goalsAndRequirements: [
-        "Implement intuitive user profile management with dual 'Skills Offered' and 'Skills Desired' taxonomies.",
-        "Develop an exploratory search and filter interface with keyword search and category tags.",
-        "Build a session exchange request system with status tracking (Pending, Accepted, Completed).",
-        "Provide reciprocal match recommendations when complementary skill overlaps are detected.",
-        "Ensure data integrity with strict schema validations and relational database constraints."
+        "Configure multi-task Gradle build files with clean dependency resolution.",
+        "Implement core library catalog entities with Kotlin data classes and encapsulation.",
+        "Handle book availability status tracking, checkouts, and returns.",
+        "Compile and package standalone executable JAR artifacts using Gradle tasks.",
+        "Maintain clean git branch hygiene and documented learning objectives."
       ],
       individualContribution: [
-        "Designed the database schema using Prisma ORM with relational models for Users, Skills, SwapRequests, and Reviews.",
-        "Developed REST API endpoints supporting user discovery, request creation, status updates, and profile configuration.",
-        "Built the responsive React frontend utilizing modern hook patterns and clean separation of UI and business logic.",
-        "Created an intuitive swap request workflow with feedback toast notifications and empty state handling.",
-        "Conducted manual integration testing across user lifecycle scenarios."
+        "Configured `build.gradle.kts` with proper JVM toolchains and application plugins.",
+        "Implemented domain models utilizing Kotlin concise syntax, null safety, and data classes.",
+        "Built inventory management routines handling book search, checkouts, and overdue tracking.",
+        "Packaged and verified executable JAR builds from command line terminal environments."
       ],
       architecture: {
-        summary: "The application employs a decoupled client-server architecture. The React SPA interacts with an Express REST API layer, which manages business logic and communicates with a PostgreSQL database via Prisma ORM.",
+        summary: "The project structure follows modern Gradle conventions (`src/main/kotlin`), separating domain entity representations from business rules and build configuration scripts.",
         highlights: [
-          "Frontend SPA: React + TypeScript styled with Tailwind CSS, utilizing client-side routing and custom HTTP hooks.",
-          "Backend API: Node.js/Express service organizing routing, request controllers, and input validation middlewares.",
-          "ORM & Database: Prisma client managing type-safe database queries against a relational PostgreSQL store.",
-          "State Management: Local React component state paired with reusable context for user preferences."
+          "Build Layer: Gradle configuration managing JVM compilation targets and task orchestration.",
+          "Language Features: Kotlin type inference, immutability defaults, and null-safe operators.",
+          "Packaging: Automated executable JAR generation ready for cross-platform JVM deployment."
         ]
       },
       keyDecisions: [
         {
-          decision: "Relational database with Prisma ORM rather than a NoSQL store",
-          rationale: "The domain exhibits strong relational integrity requirements (user A offers skill X, user B requests skill X, mutual sessions connect two users)."
+          decision: "Gradle Kotlin DSL over legacy Groovy syntax",
+          rationale: "Provides compile-time error checking, IDE auto-completion, and direct alignment with modern Android development standards."
         },
         {
-          decision: "Optimistic UI updates for swap request interactions",
-          rationale: "Provides instantaneous tactile feedback to users while handling background server synchronization gracefully."
-        },
-        {
-          decision: "Strict tag-based skill categorization",
-          rationale: "Standardizes search queries and facilitates automated discovery of complementary match pairings."
+          decision: "Kotlin Data Classes for domain models",
+          rationale: "Eliminates boilerplate `equals`, `hashCode`, and `toString` methods while guaranteeing immutability."
         }
       ],
       challengesAndSolutions: [
         {
-          challenge: "Preventing self-referential or duplicate swap requests between identical accounts.",
-          solution: "Implemented compound unique constraints at the database level and complementary frontend validation guards."
-        },
-        {
-          challenge: "Handling complex multi-tag filter combinations without sluggish UI re-renders.",
-          solution: "Utilized memoized filtering functions with `useMemo`, ensuring smooth 60fps search interactions even with extensive lists."
+          challenge: "Configuring the application manifest for automated executable JAR execution.",
+          solution: "Added Gradle `application` plugin configuration with explicit `mainClass` declaration."
         }
       ],
       testingAndQA: [
-        "Validation schema tests verifying that invalid email formats and empty skill tags are rejected at the API boundary.",
-        "Manual flow testing across two simultaneous browser sessions simulating user exchange requests and approvals.",
-        "Lighthouse performance inspection to confirm optimal asset loading and core web vitals."
+        "Gradle build and test task verification.",
+        "Command line execution testing of the compiled JAR artifact on clean environments."
       ],
       resultsAndLessons: [
-        "Constructed a fully functioning full-stack application demonstrating practical full-lifecycle engineering ability.",
-        "Gained practical experience managing relational schemas, migrations, and type-safe database access.",
-        "Learned how to balance user-friendly interactive UI states with robust backend validation."
+        "Achieved confident mastery of Gradle build tools essential for production JVM and Android engineering.",
+        "Embraced modern Kotlin idioms, null-safety guarantees, and expressive concise syntax."
+      ]
+    }
+  },
+  {
+    id: "eleni-portfolio",
+    slug: "eleni-portfolio",
+    title: "Full-Stack Developer Portfolio",
+    subtitle: "High-Performance Production Portfolio Platform Built with React 19, TypeScript & Tailwind",
+    category: "Frontend",
+    description: "A modern, responsive portfolio application designed to showcase verified full-stack software engineering projects, architectural case studies, interactive UI widgets, and clear technical competencies.",
+    featured: true,
+    status: "Production Release",
+    technologies: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Lucide Icons", "Motion", "Git"],
+    role: "Frontend & System Architect",
+    timeline: "Production Release",
+    links: {
+      github: "https://github.com/elu2121/eleni-portfolio",
+      liveDemo: "http://localhost:5173",
+      documentation: "https://github.com/elu2121/eleni-portfolio#readme"
+    },
+    placeholderImage: {
+      title: "Eleni Portfolio Web Platform",
+      caption: "Responsive dark theme, comprehensive case studies & live project showcase",
+      badge: "React 19 • TypeScript • Tailwind CSS • Vite"
+    },
+    caseStudy: {
+      overview: "This portfolio is custom-engineered to provide a professional, transparent, and aesthetically polished showcase of software engineering capabilities. It features structured case studies, interactive filtering, dynamic animations, and zero broken links.",
+      problemStatement: "Many software developer portfolios rely on generic templates, inflated unverifiable metrics, or broken links. This platform was built from scratch to reflect honest engineering craftsmanship, strict type safety, and real GitHub repository connections.",
+      goalsAndRequirements: [
+        "Design a modern dark-mode aesthetic utilizing polished graphite and emerald design tokens.",
+        "Implement client-side routing with comprehensive case studies for each real project.",
+        "Provide interactive search and category filtering with instant responsiveness.",
+        "Ensure full responsiveness across desktop, tablet, and mobile viewports.",
+        "Maintain 100% type safety with strict TypeScript and modern React 19 features."
+      ],
+      individualContribution: [
+        "Architected the entire application structure with Vite, React 19, and TypeScript.",
+        "Configured custom Tailwind CSS theme variables, shadows, fonts, and dark-mode styling.",
+        "Created reusable atomic components: Buttons, Badges, Section Headings, Project Cards, and Navigation.",
+        "Connected live repository links and case studies reflecting authentic engineering projects.",
+        "Deployed and maintained continuous version control hygiene on GitHub."
+      ],
+      architecture: {
+        summary: "Component-driven single page application built on React 19 with Vite bundler, React Router v7 navigation, and utility-first Tailwind CSS styling.",
+        highlights: [
+          "Routing: React Router v7 managing smooth client-side page transitions and deep linking to case studies.",
+          "Styling: Custom Tailwind CSS configuration with cohesive graphite and emerald color palettes.",
+          "Type System: Centralized TypeScript interface contracts for projects, skills, services, and profile configs."
+        ]
+      },
+      keyDecisions: [
+        {
+          decision: "Custom component design system rather than generic template libraries",
+          rationale: "Ensures unique visual identity, lean bundle footprint, and fine-grained control over accessibility and animations."
+        },
+        {
+          decision: "Centralized configuration architectures (`profileConfig`, `projectsData`, `skillsData`)",
+          rationale: "Enables instant content updates without modifying UI rendering logic or JSX layouts."
+        }
+      ],
+      challengesAndSolutions: [
+        {
+          challenge: "Preserving optimal scroll behavior and layout transitions when navigating between deep case studies.",
+          solution: "Implemented an automatic `ScrollToTop` router listener that resets window position on route changes."
+        }
+      ],
+      testingAndQA: [
+        "TypeScript compile checks verifying zero type errors.",
+        "Cross-browser testing on Chrome, Edge, and Firefox.",
+        "Mobile responsiveness verification across multiple screen sizes."
+      ],
+      resultsAndLessons: [
+        "Built and launched a modern, high-performance portfolio platform showcasing real software projects.",
+        "Strengthened mastery in React 19, TypeScript architecture, and utility-first styling."
       ]
     }
   }

@@ -14,10 +14,10 @@ export interface ProjectItem {
   slug: string;
   title: string;
   subtitle: string;
-  category: 'Full-Stack' | 'Frontend' | 'Cybersecurity & Tools';
+  category: 'Full-Stack' | 'Frontend' | 'Cybersecurity & Tools' | 'Desktop & Enterprise' | 'Systems & Backend';
   description: string;
   featured: boolean;
-  status: 'Completed' | 'In Development' | 'Internship Project';
+  status: 'Completed' | 'In Development' | 'Internship Project' | 'Production Release';
   technologies: string[];
   role: string;
   timeline: string;
