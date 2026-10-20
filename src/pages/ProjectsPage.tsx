@@ -30,7 +30,7 @@ export const ProjectsPage: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-12">
       {/* Page Header */}
       <div className="space-y-4 max-w-3xl">
-        <Badge variant="emerald">Project Showcase</Badge>
+        <Badge variant="emerald">Featured Project Showcase</Badge>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-graphite-100 tracking-tight">
           Engineered solutions,{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300">
@@ -38,7 +38,7 @@ export const ProjectsPage: React.FC = () => {
           </span>
         </h1>
         <p className="text-base sm:text-lg text-graphite-300 leading-relaxed font-normal">
-          Explore full-stack platforms, interactive cybersecurity educational tools, and community applications. Each project card links to a comprehensive architectural case study.
+          A curated portfolio of three core engineering projects spanning enterprise full-stack web platforms, interactive client-side cybersecurity tools, and desktop architecture. Each project card features verified technologies, source repository links, and an in-depth architectural case study.
         </p>
       </div>
 

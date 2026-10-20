@@ -348,15 +348,31 @@ export const ProjectDetailPage: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          SCREENSHOT / VISUAL PLACEHOLDER NOTICE
+          REPRESENTATIVE INTERFACE & ARCHITECTURE VISUAL
           ========================================================================= */}
-      <section className="p-6 rounded-2xl bg-graphite-900/60 border border-graphite-800 space-y-3">
-        <div className="flex items-center gap-2 text-sm font-semibold text-graphite-200">
-          <ImageIcon className="w-4 h-4 text-emerald-400" />
-          <span>Screenshots & Interface Visuals</span>
+      <section className="p-6 sm:p-8 rounded-2xl bg-graphite-900 border border-graphite-800 space-y-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2 text-sm font-semibold text-graphite-100">
+            <ImageIcon className="w-4 h-4 text-emerald-400" />
+            <span>Interface Architecture & Representative Visual</span>
+          </div>
+          <span className="text-[11px] font-mono text-emerald-400/90 bg-graphite-850 px-2.5 py-1 rounded border border-graphite-750">
+            {project.placeholderImage.badge}
+          </span>
         </div>
-        <p className="text-xs text-graphite-400 leading-relaxed font-mono">
-          [Visual asset placeholder: Screenshots can be placed into <code className="text-graphite-200">/public/projects/{project.id}-preview.png</code> and linked directly in the project configuration file.]
+
+        <div className="p-5 rounded-xl bg-graphite-950 border border-graphite-800 space-y-3">
+          <div className="flex items-center justify-between text-xs font-mono text-graphite-400 pb-2 border-b border-graphite-850">
+            <span className="text-graphite-200 font-semibold">{project.placeholderImage.title}</span>
+            <span className="text-emerald-400">{project.status}</span>
+          </div>
+          <p className="text-xs text-graphite-300 leading-relaxed font-mono">
+            {project.placeholderImage.caption}
+          </p>
+        </div>
+
+        <p className="text-xs text-graphite-400 leading-relaxed">
+          * Representative visual architecture for technical review. For proprietary internship work, company source code, internal credentials, and customer databases are strictly protected under professional confidentiality policies.
         </p>
       </section>
 
