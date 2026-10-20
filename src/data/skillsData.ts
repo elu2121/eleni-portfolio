@@ -77,3 +77,90 @@ export const engineeringPrinciples = [
     description: "I evaluate tools based on problem constraints rather than hype, choosing straightforward solutions over unnecessary complexity."
   }
 ];
+
+/**
+ * =========================================================================
+ * ABOUT PAGE - GROUPED TECHNICAL SKILLS (COMPACT BADGES)
+ * =========================================================================
+ * Editable skills grouped strictly into verified categories.
+ * No arbitrary proficiency percentage bars or invented metrics.
+ */
+export interface TechnicalSkillGroup {
+  category: 'Programming' | 'Frontend' | 'Backend' | 'Databases';
+  skills: string[];
+}
+
+export const technicalSkillsGrouped: TechnicalSkillGroup[] = [
+  {
+    category: "Programming",
+    skills: ["Python", "Java", "C#", "PHP"],
+  },
+  {
+    category: "Frontend",
+    skills: ["React", "Angular"],
+  },
+  {
+    category: "Backend",
+    skills: ["Laravel", "PHP"],
+  },
+  {
+    category: "Databases",
+    skills: ["MySQL", "Oracle SQL", "PostgreSQL"],
+  },
+];
+
+/**
+ * =========================================================================
+ * ABOUT PAGE - MY JOURNEY HIGHLIGHTS
+ * =========================================================================
+ */
+export const journeyMilestones = [
+  {
+    title: "Academic Learning",
+    subtitle: "Software Engineering Foundations",
+    description: "Building deep foundational discipline in algorithms, object-oriented design, systems architecture, and database theory through rigorous coursework and laboratory projects.",
+    tag: "Education",
+  },
+  {
+    title: "Hands-On Projects",
+    subtitle: "From Concepts to Working Systems",
+    description: "Engineering real-world software across the stack—from in-browser cryptography suites and vehicle booking portals to multi-role enterprise desktop reservation platforms in C# .NET.",
+    tag: "Engineering",
+  },
+  {
+    title: "Internship Experience",
+    subtitle: "Agile Team Collaboration",
+    description: "Contributing to live engineering workflows on platforms like gCODE-Hub: participating in daily standups, crafting typed REST APIs, reviewing peer pull requests, and honoring strict enterprise confidentiality standards.",
+    tag: "Professional",
+  },
+  {
+    title: "Passion for Useful Software",
+    subtitle: "Human-Centered Impact",
+    description: "Driven by the belief that great software removes friction and empowers people. I focus on building tools that are accessible, reliable, performant, and genuinely enjoyable to use.",
+    tag: "Purpose",
+  },
+];
+
+/**
+ * =========================================================================
+ * ABOUT PAGE - BEYOND THE CODE
+ * =========================================================================
+ */
+export const beyondTheCodeItems = [
+  {
+    title: "Intellectual Curiosity",
+    description: "I love exploring how things work under the surface—from network protocols and cryptographic hashing to relational database index execution plans.",
+  },
+  {
+    title: "Structured Problem-Solving",
+    description: "When faced with daunting technical challenges, I break them into bite-sized, testable components, iterating step-by-step toward clean solutions.",
+  },
+  {
+    title: "Continuous Learning",
+    description: "Technology moves fast. I enjoy learning new languages and architectural patterns, reading engineering blogs, and refining my coding craftsmanship every day.",
+  },
+  {
+    title: "Collaboration & Empathy",
+    description: "Code is written for humans. I value clear communication, constructive code reviews, mutual respect, and active listening in cross-functional teams.",
+  },
+];
