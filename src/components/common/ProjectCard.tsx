@@ -4,6 +4,7 @@ import {
   ArrowRight,
   Binary,
   Building2,
+  Car,
   ExternalLink,
   Hash,
   Key,
@@ -22,6 +23,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const isGCodeHub = project.id === 'gcode-hub';
+  const isCarRental = project.id === 'car-rental-system';
   const isCyber = project.id === 'cyber-attack-simulator';
   const isHotel = project.id === 'hotel-reservation-system';
 
@@ -86,6 +88,55 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               Representative Architecture Visual
             </span>
             <span className="text-graphite-500 truncate max-w-[170px]">Confidentiality Protected</span>
+          </div>
+        </div>
+      );
+    }
+
+    if (isCarRental) {
+      return (
+        <div className="relative h-52 w-full bg-gradient-to-br from-graphite-900 via-graphite-950 to-graphite-900 border-b border-graphite-750/70 p-4 sm:p-5 flex flex-col justify-between overflow-hidden group-hover:border-emerald-500/40 transition-colors">
+          <div className="absolute -top-12 -right-12 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-500/20 transition-all duration-500" />
+
+          {/* Top Window Chrome */}
+          <div className="relative z-10 flex items-center justify-between pb-2 border-b border-graphite-800/80">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-graphite-700" />
+              <span className="w-2.5 h-2.5 rounded-full bg-graphite-700" />
+              <span className="w-2.5 h-2.5 rounded-full bg-graphite-700" />
+              <span className="text-[10px] font-mono text-graphite-300 ml-2 flex items-center gap-1">
+                <Car className="w-3 h-3 text-emerald-400" />
+                fleet-portal // Reservation Engine
+              </span>
+            </div>
+            <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/40 px-2.5 py-0.5 rounded border border-emerald-500/30">
+              Full-Stack Platform
+            </span>
+          </div>
+
+          {/* Representative Vehicle Status Grid */}
+          <div className="relative z-10 my-auto py-2 space-y-2">
+            <div className="grid grid-cols-3 gap-1.5 text-[9px] font-mono">
+              <div className="p-1.5 rounded bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 text-center">
+                Sedan: Available
+              </div>
+              <div className="p-1.5 rounded bg-blue-950/40 border border-blue-500/40 text-blue-300 text-center">
+                SUV: Rented
+              </div>
+              <div className="p-1.5 rounded bg-amber-950/40 border border-amber-500/40 text-amber-300 text-center">
+                EV: In-Service
+              </div>
+            </div>
+            <div className="flex items-center justify-between px-2 py-1 rounded bg-graphite-900 border border-graphite-800 text-[10px] font-mono text-graphite-300">
+              <span className="text-graphite-400">Booking Engine:</span>
+              <span className="text-emerald-400 font-semibold truncate ml-1">Date Overlap Guard • Dynamic Pricing</span>
+            </div>
+          </div>
+
+          {/* Bottom Caption */}
+          <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-graphite-400 pt-2 border-t border-graphite-800/60">
+            <span className="text-emerald-400/90 font-medium">Representative Full-Stack UI</span>
+            <span className="text-graphite-500">React • Node.js • PostgreSQL</span>
           </div>
         </div>
       );
