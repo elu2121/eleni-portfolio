@@ -32,13 +32,13 @@ export const ProjectsPage: React.FC = () => {
       <div className="space-y-4 max-w-3xl">
         <Badge variant="emerald">Curated Showcase</Badge>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-graphite-100 tracking-tight leading-tight">
-          Featured Projects &{' '}
+          Core Software Engineering{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300">
-            System Architecture.
+            Projects.
           </span>
         </h1>
         <p className="text-base sm:text-lg text-graphite-300 leading-relaxed font-normal">
-          Hands-on software engineering across enterprise full-stack platforms, interactive cryptography tools, and desktop applications. Each project card includes verified technologies, source code repositories, and comprehensive architectural case studies.
+          Real-world systems built with React, C# .NET, and modern web standards. Each project card includes verified technologies, working repository links, and comprehensive architectural case studies.
         </p>
       </div>
 
