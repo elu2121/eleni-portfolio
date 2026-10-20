@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface BadgeProps {
   children: React.ReactNode;
-  variant?: 'emerald' | 'graphite' | 'muted' | 'outline' | 'pulse';
+  variant?: 'gold' | 'emerald' | 'graphite' | 'muted' | 'outline' | 'pulse';
   size?: 'sm' | 'md';
   className?: string;
   icon?: React.ReactNode;
@@ -15,8 +15,9 @@ export const Badge: React.FC<BadgeProps> = ({
   className = '',
   icon,
 }) => {
+  // Use regular font (not mono) for pills and badges as requested
   const baseClasses =
-    'inline-flex items-center font-mono font-medium rounded-full tracking-wide transition-colors';
+    'inline-flex items-center font-sans font-medium rounded-full tracking-normal transition-colors';
 
   const sizeClasses = {
     sm: 'text-[11px] px-2.5 py-0.5 gap-1.5',
@@ -24,19 +25,20 @@ export const Badge: React.FC<BadgeProps> = ({
   }[size];
 
   const variantClasses = {
-    emerald: 'bg-emerald-950/70 text-emerald-300 border border-emerald-500/30',
-    graphite: 'bg-graphite-800 text-graphite-300 border border-graphite-700',
+    gold: 'bg-graphite-850 text-graphite-200 border border-graphite-700',
+    emerald: 'bg-graphite-850 text-graphite-200 border border-graphite-700',
+    graphite: 'bg-graphite-850 text-graphite-300 border border-graphite-750',
     muted: 'bg-graphite-850/80 text-graphite-400 border border-graphite-750',
-    outline: 'bg-transparent text-emerald-400 border border-emerald-500/40',
-    pulse: 'bg-emerald-950/60 text-emerald-300 border border-emerald-500/30',
+    outline: 'bg-transparent text-graphite-300 border border-graphite-700',
+    pulse: 'bg-graphite-850 text-graphite-200 border border-graphite-700',
   }[variant];
 
   return (
     <span className={`${baseClasses} ${sizeClasses} ${variantClasses} ${className}`}>
       {variant === 'pulse' && (
         <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-500"></span>
         </span>
       )}
       {icon && <span className="shrink-0">{icon}</span>}

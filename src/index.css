@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -43,7 +43,7 @@ h1 {
     background: #222B42;
   }
 
-  /* Accessible focus indicators with champagne gold */
+  /* Accessible focus indicators with gold */
   *:focus-visible {
     outline: none;
     box-shadow: 0 0 0 2px #C9A96A, 0 0 0 4px #0B0F1A;
@@ -54,17 +54,8 @@ h1 {
   .bg-grid-pattern {
     background-size: 40px 40px;
     background-image: 
-      linear-gradient(to right, rgba(242, 238, 230, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(242, 238, 230, 0.03) 1px, transparent 1px);
-  }
-
-  .bg-radial-glow {
-    background: radial-gradient(circle at 50% 0%, rgba(201, 169, 106, 0.12) 0%, transparent 65%);
-  }
-
-  /* Subtle card gradient */
-  .card-gradient {
-    background: linear-gradient(180deg, rgba(19, 25, 41, 0.95) 0%, rgba(14, 20, 34, 0.95) 100%);
+      linear-gradient(to right, rgba(242, 238, 230, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(242, 238, 230, 0.02) 1px, transparent 1px);
   }
 }
 

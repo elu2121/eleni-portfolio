@@ -25,18 +25,20 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-2 space-y-4">
             <Link
               to="/"
-              className="inline-flex items-center gap-1 text-2xl font-black text-graphite-100 hover:text-white transition-colors"
+              className="inline-flex items-center gap-1.5 text-xl font-extrabold tracking-tight text-graphite-100 hover:text-white transition-colors group"
             >
+              <span className="font-mono text-gold-500 group-hover:scale-110 transition-transform">
+                &lt;
+              </span>
               <span>{profileConfig.wordmark.replace('.', '')}</span>
-              <span className="text-emerald-400">.</span>
+              <span className="text-gold-500">.</span>
+              <span className="font-mono text-gold-500 group-hover:scale-110 transition-transform">
+                /&gt;
+              </span>
             </Link>
             <p className="text-sm text-graphite-400 max-w-sm leading-relaxed">
               {profileConfig.shortBio}
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs font-mono text-emerald-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>{profileConfig.availability}</span>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -49,7 +51,7 @@ export const Footer: React.FC = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="hover:text-emerald-400 transition-colors"
+                    className="hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -67,9 +69,9 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href={`mailto:${profileConfig.contact.email}`}
-                  className="inline-flex items-center gap-2 hover:text-emerald-400 transition-colors group"
+                  className="inline-flex items-center gap-2 hover:text-white transition-colors group"
                 >
-                  <Mail className="w-4 h-4 text-emerald-500 group-hover:scale-110 transition-transform" />
+                  <Mail className="w-4 h-4 text-graphite-400 group-hover:text-white transition-transform" />
                   <span className="truncate max-w-[200px]">{profileConfig.contact.email}</span>
                 </a>
               </li>
@@ -78,9 +80,9 @@ export const Footer: React.FC = () => {
                   href={profileConfig.contact.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-emerald-400 transition-colors group"
+                  className="inline-flex items-center gap-2 hover:text-white transition-colors group"
                 >
-                  <GithubIcon className="w-4 h-4 text-graphite-300 group-hover:text-emerald-400 group-hover:scale-110 transition-transform" />
+                  <GithubIcon className="w-4 h-4 text-graphite-400 group-hover:text-white transition-transform" />
                   <span>GitHub</span>
                 </a>
               </li>
@@ -89,9 +91,9 @@ export const Footer: React.FC = () => {
                   href={profileConfig.contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-emerald-400 transition-colors group"
+                  className="inline-flex items-center gap-2 hover:text-white transition-colors group"
                 >
-                  <LinkedinIcon className="w-4 h-4 text-graphite-300 group-hover:text-emerald-400 group-hover:scale-110 transition-transform" />
+                  <LinkedinIcon className="w-4 h-4 text-graphite-400 group-hover:text-white transition-transform" />
                   <span>LinkedIn</span>
                 </a>
               </li>
@@ -102,7 +104,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-graphite-500">
           <div className="flex items-center gap-2 text-center sm:text-left">
-            <Code className="w-3.5 h-3.5 text-emerald-400" />
+            <Code className="w-3.5 h-3.5 text-graphite-400" />
             <span>
               Engineered with React, TypeScript & Tailwind CSS • {new Date().getFullYear()} {profileConfig.name}
             </span>
@@ -111,7 +113,7 @@ export const Footer: React.FC = () => {
           <button
             onClick={scrollToTop}
             aria-label="Scroll to top of page"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-graphite-900 border border-graphite-800 text-graphite-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-graphite-900 border border-graphite-800 text-graphite-400 hover:text-white hover:border-graphite-700 transition-colors cursor-pointer"
           >
             <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />

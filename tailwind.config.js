@@ -8,19 +8,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Midnight & Champagne Gold palette
+        // Midnight Navy and Champagne Gold palette
         // Background: #0B0F1A
         // Cards: #131929
         // Text: #F2EEE6
         // Muted text: #A9B2C3
-        // Gold accent: #C9A96A
+        // Accent: #C9A96A
         graphite: {
           950: "#0B0F1A", // Background (Midnight)
           900: "#0E1422", // Surface
-          850: "#131929", // Cards / Containers
+          850: "#131929", // Cards / Containers (#131929)
           800: "#1A2236", // Elevated cards
           750: "#222B42", // Borders
           700: "#2C3752", // Active borders
+          650: "#3B4764", // Subtle hover borders
           600: "#4B5975",
           500: "#7A869E",
           400: "#A9B2C3", // Brighter Muted text (#A9B2C3)
@@ -29,19 +30,6 @@ export default {
           100: "#F2EEE6", // Primary text (#F2EEE6)
           50: "#FAF7F2",
         },
-        emerald: {
-          950: "#201A0E",
-          900: "#382D16",
-          800: "#5B4820",
-          700: "#7F652B",
-          600: "#A5853B",
-          500: "#C9A96A", // Soft Champagne Gold (#C9A96A)
-          400: "#D6BC83", // Gold highlight
-          300: "#E3CF9F", // Light gold
-          200: "#EFE2BF",
-          100: "#FAF3E0",
-          50: "#FDFBF5",
-        },
         gold: {
           950: "#201A0E",
           900: "#382D16",
@@ -49,6 +37,20 @@ export default {
           700: "#7F652B",
           600: "#A5853B",
           500: "#C9A96A", // Soft Champagne Gold (#C9A96A)
+          400: "#D6BC83", // Headline accent & hover
+          300: "#E3CF9F", // Light gold
+          200: "#EFE2BF",
+          100: "#FAF3E0",
+          50: "#FDFBF5",
+        },
+        // Backward-compatibility alias pointing to gold palette
+        emerald: {
+          950: "#201A0E",
+          900: "#382D16",
+          800: "#5B4820",
+          700: "#7F652B",
+          600: "#A5853B",
+          500: "#C9A96A",
           400: "#D6BC83",
           300: "#E3CF9F",
           200: "#EFE2BF",
@@ -88,9 +90,7 @@ export default {
       },
       boxShadow: {
         "card": "0 4px 20px -2px rgba(0, 0, 0, 0.55)",
-        "card-hover": "0 10px 30px -4px rgba(0, 0, 0, 0.7), 0 0 16px -2px rgba(201, 169, 106, 0.22)",
-        "emerald-glow": "0 0 25px -5px rgba(201, 169, 106, 0.35)",
-        "emerald-sm": "0 0 12px -2px rgba(201, 169, 106, 0.4)",
+        "card-hover": "0 8px 30px -4px rgba(0, 0, 0, 0.7)",
       },
     },
   },
