@@ -24,19 +24,19 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
 
   return (
     <div
-      className={`mb-12 md:mb-16 ${
+      className={`mb-8 md:mb-10 ${
         isCenter ? 'text-center mx-auto max-w-2xl' : 'max-w-3xl'
       } ${className}`}
     >
       {badge && (
-        <div className={`mb-3 ${isCenter ? 'flex justify-center' : ''}`}>
+        <div className={`mb-2.5 ${isCenter ? 'flex justify-center' : ''}`}>
           <Badge variant="emerald">{badge}</Badge>
         </div>
       )}
 
       <div className={`flex flex-col md:flex-row md:items-end justify-between gap-4`}>
         <div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-graphite-100">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-graphite-100">
             {title}{' '}
             {highlight && (
               <span className="text-emerald-400 relative inline-block">
@@ -46,7 +46,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
             )}
           </h2>
           {subtitle && (
-            <p className="mt-3 text-base sm:text-lg text-graphite-400 leading-relaxed font-normal">
+            <p className="mt-2 text-sm sm:text-base text-graphite-400 leading-relaxed font-normal">
               {subtitle}
             </p>
           )}
