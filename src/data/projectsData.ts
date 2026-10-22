@@ -4,16 +4,16 @@ import type { ProjectItem } from '../types';
  * =========================================================================
  * ELENI GIREFI - FEATURED PROJECTS & TECHNICAL CASE STUDIES
  * =========================================================================
- * Reusable, editable project data featuring core software engineering projects:
- * - gCODE-Hub (Full-Stack Internship Project - Flagship Visual Emphasis)
- * - Car Rental Management System (Full-Stack Fleet & Reservation Platform)
- * - Cyber Attack Simulator (Cybersecurity & Web Crypto Lab)
- * - Hotel Reservation System (Enterprise C# .NET WPF & Web API)
+ * Verified software engineering projects:
+ * 1. gCODE-Hub (Full-Stack Internship Project - Flagship Engineering Work)
+ * 2. Cyber Attack Simulator (Interactive Cryptography Visual Lab - React & Web Crypto)
+ * 3. Hotel Reservation Desktop App (Enterprise C# .NET WPF & ASP.NET Core Web API)
+ * 4. Car Rental Management System (Full-Stack Fleet Reservation Platform)
  *
- * Confidentiality & Accuracy Notice:
+ * Professional Standards & Confidentiality Notice:
  * - Verified against official repositories and README documentation.
  * - Proprietary internship source code, internal credentials, and customer data
- *   are strictly protected under professional confidentiality standards.
+ *   are strictly protected under professional confidentiality policies.
  */
 export const projectsData: ProjectItem[] = [
   {
@@ -25,16 +25,16 @@ export const projectsData: ProjectItem[] = [
     description: "A centralized web platform engineered during an internship engagement to streamline student access to specialized technical courses, professional engineering services, application workflows, and administrative review portals.",
     featured: true,
     status: "Internship Project",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "REST APIs", "PostgreSQL", "Git"],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "REST APIs", "Git"],
     role: "Full-Stack Intern Developer",
     timeline: "Internship Engagement",
     links: {
-      github: "https://github.com/gCODE-Technologies/gCODE-Hub",
-      liveDemo: undefined, // Internal corporate deployment
-      documentation: "https://github.com/gCODE-Technologies/gCODE-Hub"
+      github: undefined,
+      liveDemo: undefined,
+      documentation: undefined
     },
     placeholderImage: {
-      title: "gCODE-Hub Workflow & Service Portal",
+      title: "gCODE-Hub Workflow & Service Platform",
       caption: "Representative architecture visual • Course catalogs, applicant intake & admin portal",
       badge: "Featured Internship Project • Confidential Data Protected"
     },
@@ -102,90 +102,6 @@ export const projectsData: ProjectItem[] = [
     }
   },
   {
-    id: "car-rental-system",
-    slug: "car-rental-system",
-    title: "Car Rental Management System",
-    subtitle: "Full-Stack Web Platform for Vehicle Fleet Booking & Inventory Scheduling",
-    category: "Full-Stack",
-    description: "A comprehensive full-stack automotive rental application designed to streamline vehicle fleet discovery, real-time booking schedules, dynamic pricing calculations, customer profile management, and administrative fleet operations.",
-    featured: true,
-    status: "Completed",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "REST APIs", "Git"],
-    role: "Full-Stack Developer",
-    timeline: "Full-Stack Project",
-    links: {
-      github: "https://github.com/elu2121/car-rental-system",
-      liveDemo: undefined,
-      documentation: "https://github.com/elu2121/car-rental-system#readme"
-    },
-    placeholderImage: {
-      title: "Fleet Management & Reservation Engine",
-      caption: "Representative UI • Fleet catalog, real-time availability scheduler & booking flow",
-      badge: "React • TypeScript • Node.js • PostgreSQL"
-    },
-    caseStudy: {
-      overview: "The Car Rental Management System was engineered to provide a seamless, end-to-end digital experience for vehicle reservations. Customers can explore diverse fleet categories, verify real-time availability by date and location, calculate transparent rental costs, and complete reservations. Simultaneously, fleet administrators monitor vehicle statuses, maintenance logs, and rental lifecycles through a unified dashboard.",
-      problemStatement: "Automotive rental operations frequently struggle with manual scheduling, double-booking race conditions during peak travel windows, and fragmented customer records. This application was built to automate the reservation pipeline with atomic database constraints and responsive, intuitive user interfaces.",
-      goalsAndRequirements: [
-        "Design a high-performance, responsive customer catalog with multi-facet filters (category, transmission, fuel type, daily rate).",
-        "Implement an atomic date-range availability algorithm preventing overlapping vehicle bookings.",
-        "Build an administrative dashboard for tracking fleet status (Available, Rented, Maintenance, In-Service).",
-        "Deliver a transparent pricing engine computing rental duration, tiered discounts, insurance add-ons, and taxes.",
-        "Ensure strict type safety across client-server REST communication with validated payload schemas."
-      ],
-      individualContribution: [
-        "Architected the relational PostgreSQL database schema with models for Vehicles, Categories, Bookings, Customers, and Maintenance Logs.",
-        "Constructed RESTful API endpoints in Node.js/Express with request sanitation, JWT authentication, and error interception.",
-        "Engineered the responsive React frontend using modern hooks, Tailwind CSS layout tokens, and interactive date-range pickers.",
-        "Implemented real-time pricing computation logic supporting custom promotional codes and multi-day discounts.",
-        "Established comprehensive API route documentation and input validation middleware using schema validators."
-      ],
-      architecture: {
-        summary: "The platform operates on a decoupled client-server architecture. A responsive React single-page application interfaces with a stateless Node.js REST API service connected to a relational PostgreSQL database.",
-        highlights: [
-          "Client Layer: React + TypeScript styled with Tailwind CSS, utilizing component-level state and interactive date range filters.",
-          "API Layer: Express.js REST controllers organized around domain boundaries (Auth, Fleet, Bookings, Billing).",
-          "Data Layer: PostgreSQL relational database with indexed timestamp fields for fast date-range collision queries.",
-          "Security: HTTP-only session cookies, bcrypt password hashing, and parameterized SQL queries preventing injection attacks."
-        ]
-      },
-      keyDecisions: [
-        {
-          decision: "Server-side atomic date-range overlap validation",
-          rationale: "Prevents race conditions where two customers attempt to reserve the same vehicle for conflicting dates simultaneously."
-        },
-        {
-          decision: "Relational PostgreSQL database schema over unstructured NoSQL document stores",
-          rationale: "Car rental workflows rely heavily on relational constraints (foreign keys linking vehicles, reservations, and customer accounts)."
-        },
-        {
-          decision: "Modular pricing rule calculator module",
-          rationale: "Enables flexible updates to daily rates, weekend surcharges, and seasonal pricing models without altering booking logic."
-        }
-      ],
-      challengesAndSolutions: [
-        {
-          challenge: "Detecting date collisions when rental periods span across months or non-standard durations.",
-          solution: "Implemented an SQL date-range overlap query (`WHERE check_out > new_check_in AND check_in < new_check_out`) optimized with composite date indices."
-        },
-        {
-          challenge: "Maintaining snappy catalog filtering while handling multiple simultaneous search parameters.",
-          solution: "Created memoized client-side filter chains and debounced search queries, ensuring smooth 60fps filter responses."
-        }
-      ],
-      testingAndQA: [
-        "Unit tests verifying pricing calculations across single-day, multi-day, and discount-tier scenarios.",
-        "Integration tests testing booking conflicts under concurrent simulated reservations.",
-        "Cross-browser and mobile responsive testing covering the entire reservation workflow."
-      ],
-      resultsAndLessons: [
-        "Successfully developed and launched a full-featured commercial web application.",
-        "Gained deep expertise in date-range algorithmic validation and relational schema optimization.",
-        "Reinforced the value of structured type contracts between client form components and API controllers."
-      ]
-    }
-  },
-  {
     id: "cyber-attack-simulator",
     slug: "cyber-attack-simulator",
     title: "Cyber Attack Simulator & Cryptography Visual Lab",
@@ -194,9 +110,9 @@ export const projectsData: ProjectItem[] = [
     description: "An interactive educational web application built with React 18, Vite, Tailwind CSS, and the native Web Crypto API that visualizes real-time AES-256 encryption/decryption, SHA-256 one-way hashing, HMAC-SHA256 authentication, and defense mitigation techniques.",
     featured: true,
     status: "Completed",
-    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Web Crypto API", "OWASP Security", "Git"],
+    technologies: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "Web Crypto API", "PBKDF2", "AES-256", "SHA-256", "HMAC", "Git"],
     role: "Lead Developer & Security Researcher",
-    timeline: "Personal & Security Project",
+    timeline: "Security Project",
     links: {
       github: "https://github.com/elu2121/cyber-attack-simulator",
       liveDemo: undefined,
@@ -272,10 +188,10 @@ export const projectsData: ProjectItem[] = [
   {
     id: "hotel-reservation-system",
     slug: "hotel-reservation-system",
-    title: "Hotel Reservation System (HRS)",
-    subtitle: "Enterprise Desktop Application & ASP.NET Core Web API",
+    title: "Hotel Reservation Desktop App",
+    subtitle: "Enterprise Desktop Application & ASP.NET Core Web API (HRS)",
     category: "Desktop & Enterprise",
-    description: "A full-featured enterprise hospitality management platform designed to streamline operations across room reservations, guest intake, automated billing, invoice generation, and staff audit tracking.",
+    description: "An enterprise hospitality management platform designed to streamline room reservations, guest intake, automated invoice generation, and staff audit tracking with a responsive WPF desktop client, decoupled ASP.NET Core Web API, and SQL Server persistence.",
     featured: true,
     status: "Completed",
     technologies: ["C#", ".NET Core", "WPF", "ASP.NET Core Web API", "Entity Framework Core", "SQL Server", "REST APIs", "Git"],
@@ -350,6 +266,90 @@ export const projectsData: ProjectItem[] = [
         "Constructed a robust, real-world desktop and backend enterprise software application from architecture to implementation.",
         "Deepened mastery in C#, .NET runtime idioms, WPF data binding, and relational database schema modeling.",
         "Reinforced the importance of separating presentation from domain business logic through REST contracts."
+      ]
+    }
+  },
+  {
+    id: "car-rental-system",
+    slug: "car-rental-system",
+    title: "Car Rental Management System",
+    subtitle: "Full-Stack Web Platform for Vehicle Fleet Booking & Inventory Scheduling",
+    category: "Full-Stack",
+    description: "A comprehensive full-stack automotive rental application designed to streamline vehicle fleet discovery, real-time booking schedules, dynamic pricing calculations, customer profile management, and administrative fleet operations.",
+    featured: false,
+    status: "Completed",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "REST APIs", "Git"],
+    role: "Full-Stack Developer",
+    timeline: "Full-Stack Project",
+    links: {
+      github: undefined,
+      liveDemo: undefined,
+      documentation: undefined
+    },
+    placeholderImage: {
+      title: "Fleet Management & Reservation Engine",
+      caption: "Representative UI • Fleet catalog, real-time availability scheduler & booking flow",
+      badge: "React • TypeScript • Node.js • PostgreSQL"
+    },
+    caseStudy: {
+      overview: "The Car Rental Management System was engineered to provide a seamless, end-to-end digital experience for vehicle reservations. Customers can explore diverse fleet categories, verify real-time availability by date and location, calculate transparent rental costs, and complete reservations. Simultaneously, fleet administrators monitor vehicle statuses, maintenance logs, and rental lifecycles through a unified dashboard.",
+      problemStatement: "Automotive rental operations frequently struggle with manual scheduling, double-booking race conditions during peak travel windows, and fragmented customer records. This application was built to automate the reservation pipeline with atomic database constraints and responsive, intuitive user interfaces.",
+      goalsAndRequirements: [
+        "Design a high-performance, responsive customer catalog with multi-facet filters (category, transmission, fuel type, daily rate).",
+        "Implement an atomic date-range availability algorithm preventing overlapping vehicle bookings.",
+        "Build an administrative dashboard for tracking fleet status (Available, Rented, Maintenance, In-Service).",
+        "Deliver a transparent pricing engine computing rental duration, tiered discounts, insurance add-ons, and taxes.",
+        "Ensure strict type safety across client-server REST communication with validated payload schemas."
+      ],
+      individualContribution: [
+        "Architected the relational PostgreSQL database schema with models for Vehicles, Categories, Bookings, Customers, and Maintenance Logs.",
+        "Constructed RESTful API endpoints in Node.js/Express with request sanitation, JWT authentication, and error interception.",
+        "Engineered the responsive React frontend using modern hooks, Tailwind CSS layout tokens, and interactive date-range pickers.",
+        "Implemented real-time pricing computation logic supporting custom promotional codes and multi-day discounts.",
+        "Established comprehensive API route documentation and input validation middleware using schema validators."
+      ],
+      architecture: {
+        summary: "The platform operates on a decoupled client-server architecture. A responsive React single-page application interfaces with a stateless Node.js REST API service connected to a relational PostgreSQL database.",
+        highlights: [
+          "Client Layer: React + TypeScript styled with Tailwind CSS, utilizing component-level state and interactive date range filters.",
+          "API Layer: Express.js REST controllers organized around domain boundaries (Auth, Fleet, Bookings, Billing).",
+          "Data Layer: PostgreSQL relational database with indexed timestamp fields for fast date-range collision queries.",
+          "Security: HTTP-only session cookies, bcrypt password hashing, and parameterized SQL queries preventing injection attacks."
+        ]
+      },
+      keyDecisions: [
+        {
+          decision: "Server-side atomic date-range overlap validation",
+          rationale: "Prevents race conditions where two customers attempt to reserve the same vehicle for conflicting dates simultaneously."
+        },
+        {
+          decision: "Relational PostgreSQL database schema over unstructured NoSQL document stores",
+          rationale: "Car rental workflows rely heavily on relational constraints (foreign keys linking vehicles, reservations, and customer accounts)."
+        },
+        {
+          decision: "Modular pricing rule calculator module",
+          rationale: "Enables flexible updates to daily rates, weekend surcharges, and seasonal pricing models without altering booking logic."
+        }
+      ],
+      challengesAndSolutions: [
+        {
+          challenge: "Detecting date collisions when rental periods span across months or non-standard durations.",
+          solution: "Implemented an SQL date-range overlap query (`WHERE check_out > new_check_in AND check_in < new_check_out`) optimized with composite date indices."
+        },
+        {
+          challenge: "Maintaining snappy catalog filtering while handling multiple simultaneous search parameters.",
+          solution: "Created memoized client-side filter chains and debounced search queries, ensuring smooth 60fps filter responses."
+        }
+      ],
+      testingAndQA: [
+        "Unit tests verifying pricing calculations across single-day, multi-day, and discount-tier scenarios.",
+        "Integration tests testing booking conflicts under concurrent simulated reservations.",
+        "Cross-browser and mobile responsive testing covering the entire reservation workflow."
+      ],
+      resultsAndLessons: [
+        "Successfully developed and launched a full-featured commercial web application.",
+        "Gained deep expertise in date-range algorithmic validation and relational schema optimization.",
+        "Reinforced the value of structured type contracts between client form components and API controllers."
       ]
     }
   }

@@ -26,19 +26,19 @@ export const Badge: React.FC<BadgeProps> = ({
 
   const variantClasses = {
     gold: 'bg-graphite-850 text-graphite-200 border border-graphite-700',
-    emerald: 'bg-graphite-850 text-graphite-200 border border-graphite-700',
+    emerald: 'bg-emerald-950/60 text-emerald-300 border border-emerald-500/30',
     graphite: 'bg-graphite-850 text-graphite-300 border border-graphite-750',
     muted: 'bg-graphite-850/80 text-graphite-400 border border-graphite-750',
     outline: 'bg-transparent text-graphite-300 border border-graphite-700',
-    pulse: 'bg-graphite-850 text-graphite-200 border border-graphite-700',
+    pulse: 'bg-emerald-950/50 text-emerald-300 border border-emerald-500/30',
   }[variant];
 
   return (
     <span className={`${baseClasses} ${sizeClasses} ${variantClasses} ${className}`}>
       {variant === 'pulse' && (
         <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-500"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
         </span>
       )}
       {icon && <span className="shrink-0">{icon}</span>}

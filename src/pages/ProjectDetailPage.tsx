@@ -45,14 +45,14 @@ export const ProjectDetailPage: React.FC = () => {
       <div className="flex items-center justify-between border-b border-graphite-800 pb-6">
         <Link
           to="/projects"
-          className="inline-flex items-center gap-2 text-xs font-mono text-graphite-400 hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-mono text-graphite-400 hover:text-emerald-400 transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to All Projects</span>
         </Link>
 
         <div className="flex items-center gap-2">
-          <Badge variant="graphite">{project.status}</Badge>
+          <Badge variant={project.featured ? "emerald" : "graphite"}>{project.status}</Badge>
           <Badge variant="graphite">{project.category}</Badge>
         </div>
       </div>
@@ -100,6 +100,13 @@ export const ProjectDetailPage: React.FC = () => {
             </Button>
           )}
 
+          {project.id === 'gcode-hub' && (
+            <span className="text-xs font-mono text-graphite-300 flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-graphite-900 border border-graphite-750">
+              <Shield className="w-4 h-4 text-emerald-400" />
+              <span>Proprietary Internship Work • Confidential Source</span>
+            </span>
+          )}
+
           {project.links.liveDemo ? (
             <Button
               href={project.links.liveDemo}
@@ -109,8 +116,8 @@ export const ProjectDetailPage: React.FC = () => {
               Open Live Application
             </Button>
           ) : (
-            <span className="text-xs font-mono text-graphite-500 flex items-center gap-1.5 px-3 py-2 rounded-lg bg-graphite-900 border border-graphite-800">
-              <Shield className="w-3.5 h-3.5 text-graphite-400" />
+            <span className="text-xs font-mono text-graphite-400 flex items-center gap-1.5 px-3 py-2 rounded-lg bg-graphite-900 border border-graphite-800">
+              <Shield className="w-3.5 h-3.5 text-emerald-400" />
               Live Demo: Internal / Protected Deployment
             </span>
           )}
@@ -121,10 +128,10 @@ export const ProjectDetailPage: React.FC = () => {
           CONFIDENTIALITY NOTICE (If applicable, e.g. gCODE-Hub)
           ========================================================================= */}
       {caseStudy.confidentialityNotice && (
-        <section className="p-5 rounded-xl bg-graphite-900 border border-graphite-750 flex items-start gap-3">
-          <Shield className="w-5 h-5 text-graphite-300 shrink-0 mt-0.5" />
+        <section className="p-5 rounded-xl bg-graphite-900/90 border border-emerald-500/20 flex items-start gap-3">
+          <Shield className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
           <div className="space-y-1">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-graphite-200">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-300">
               Confidentiality & Data Protection Notice
             </h4>
             <p className="text-xs sm:text-sm text-graphite-300 leading-relaxed">
@@ -162,7 +169,7 @@ export const ProjectDetailPage: React.FC = () => {
           ========================================================================= */}
       <section className="space-y-6">
         <h2 className="text-2xl font-bold text-graphite-100 flex items-center gap-2">
-          <FileCheck2 className="w-5 h-5 text-graphite-400" />
+          <FileCheck2 className="w-5 h-5 text-emerald-400" />
           <span>Goals & Engineering Requirements</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -171,7 +178,7 @@ export const ProjectDetailPage: React.FC = () => {
               key={idx}
               className="p-4 rounded-xl bg-graphite-900/80 border border-graphite-800 flex items-start gap-3"
             >
-              <CheckCircle2 className="w-4 h-4 text-graphite-400 shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
               <span className="text-sm text-graphite-300 leading-snug">{goal}</span>
             </div>
           ))}
@@ -183,14 +190,14 @@ export const ProjectDetailPage: React.FC = () => {
           ========================================================================= */}
       <section className="space-y-6">
         <h2 className="text-2xl font-bold text-graphite-100 flex items-center gap-2">
-          <Code2 className="w-5 h-5 text-graphite-400" />
+          <Code2 className="w-5 h-5 text-emerald-400" />
           <span>My Individual Engineering Contribution</span>
         </h2>
         <div className="p-6 sm:p-8 rounded-2xl bg-graphite-900 border border-graphite-800 space-y-4">
           <ul className="space-y-3 text-sm sm:text-base text-graphite-300">
             {caseStudy.individualContribution.map((contribution, idx) => (
               <li key={idx} className="flex items-start gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-graphite-400 shrink-0 mt-2" />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0 mt-2" />
                 <span>{contribution}</span>
               </li>
             ))}
@@ -263,7 +270,7 @@ export const ProjectDetailPage: React.FC = () => {
               className="p-5 rounded-xl bg-graphite-900 border border-graphite-800 space-y-2"
             >
               <h3 className="text-base font-bold text-graphite-200 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-graphite-400" />
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
                 <span>{item.decision}</span>
               </h3>
               <p className="text-xs sm:text-sm text-graphite-400 pl-4 leading-relaxed">
@@ -288,7 +295,7 @@ export const ProjectDetailPage: React.FC = () => {
               className="p-6 rounded-xl bg-graphite-900 border border-graphite-800 space-y-4 flex flex-col justify-between"
             >
               <div>
-                <span className="text-xs font-mono text-graphite-500 uppercase tracking-wider block mb-1">
+                <span className="text-xs font-mono text-emerald-400/90 uppercase tracking-wider block mb-1">
                   Challenge 0{idx + 1}
                 </span>
                 <h3 className="text-sm font-semibold text-graphite-200 mb-3">
@@ -296,7 +303,7 @@ export const ProjectDetailPage: React.FC = () => {
                 </h3>
               </div>
               <div className="pt-3 border-t border-graphite-800">
-                <span className="text-xs font-mono text-graphite-300 uppercase tracking-wider block mb-1 font-semibold">
+                <span className="text-xs font-mono text-emerald-300 uppercase tracking-wider block mb-1 font-semibold">
                   Engineering Solution
                 </span>
                 <p className="text-xs text-graphite-300 leading-relaxed">
@@ -313,14 +320,14 @@ export const ProjectDetailPage: React.FC = () => {
           ========================================================================= */}
       <section className="space-y-6">
         <h2 className="text-2xl font-bold text-graphite-100 flex items-center gap-2">
-          <FileCheck2 className="w-5 h-5 text-graphite-400" />
+          <FileCheck2 className="w-5 h-5 text-emerald-400" />
           <span>Testing & Quality Assurance</span>
         </h2>
         <div className="p-6 sm:p-8 rounded-2xl bg-graphite-900 border border-graphite-800 space-y-3">
           <ul className="space-y-2.5 text-sm text-graphite-300">
             {caseStudy.testingAndQA.map((item, idx) => (
               <li key={idx} className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-graphite-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span>{item}</span>
               </li>
             ))}
@@ -339,7 +346,7 @@ export const ProjectDetailPage: React.FC = () => {
           <ul className="space-y-3 text-sm sm:text-base text-graphite-300">
             {caseStudy.resultsAndLessons.map((item, idx) => (
               <li key={idx} className="flex items-start gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-graphite-400 shrink-0 mt-2" />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0 mt-2" />
                 <span>{item}</span>
               </li>
             ))}
@@ -383,14 +390,14 @@ export const ProjectDetailPage: React.FC = () => {
         {prevProject ? (
           <Link
             to={`/projects/${prevProject.id}`}
-            className="p-4 rounded-xl bg-graphite-900 border border-graphite-800 hover:border-graphite-650 transition-colors flex items-center gap-3 group text-left"
+            className="p-4 rounded-xl bg-graphite-900 border border-graphite-800 hover:border-emerald-500/40 transition-colors flex items-center gap-3 group text-left"
           >
-            <ArrowLeft className="w-4 h-4 text-graphite-400 shrink-0 group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft className="w-4 h-4 text-graphite-400 shrink-0 group-hover:-translate-x-1 transition-transform group-hover:text-emerald-400" />
             <div>
               <span className="text-[10px] font-mono text-graphite-500 uppercase tracking-wider block">
                 Previous Case Study
               </span>
-              <span className="text-sm font-bold text-graphite-200 group-hover:text-white transition-colors">
+              <span className="text-sm font-bold text-graphite-200 group-hover:text-emerald-300 transition-colors">
                 {prevProject.title}
               </span>
             </div>
@@ -402,17 +409,17 @@ export const ProjectDetailPage: React.FC = () => {
         {nextProject && (
           <Link
             to={`/projects/${nextProject.id}`}
-            className="p-4 rounded-xl bg-graphite-900 border border-graphite-800 hover:border-graphite-650 transition-colors flex items-center justify-between group text-right sm:col-start-2"
+            className="p-4 rounded-xl bg-graphite-900 border border-graphite-800 hover:border-emerald-500/40 transition-colors flex items-center justify-between group text-right sm:col-start-2"
           >
             <div>
               <span className="text-[10px] font-mono text-graphite-500 uppercase tracking-wider block">
                 Next Case Study
               </span>
-              <span className="text-sm font-bold text-graphite-200 group-hover:text-white transition-colors">
+              <span className="text-sm font-bold text-graphite-200 group-hover:text-emerald-300 transition-colors">
                 {nextProject.title}
               </span>
             </div>
-            <ArrowRight className="w-4 h-4 text-graphite-400 shrink-0 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-graphite-400 shrink-0 group-hover:translate-x-1 transition-transform group-hover:text-emerald-400" />
           </Link>
         )}
       </nav>

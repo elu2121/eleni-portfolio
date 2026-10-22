@@ -9,8 +9,8 @@ import { GithubIcon } from '../components/common/SocialIcons';
 import { HeroSection } from '../components/home/HeroSection';
 
 export const HomePage: React.FC = () => {
-  // Curate exactly the top 3 projects for a concise, non-bloated showcase
-  const featuredProjects = projectsData.slice(0, 3);
+  // Feature exactly the 3 curated projects in order (gCODE-Hub, Cyber Attack Simulator, Hotel Reservation System)
+  const featuredProjects = projectsData.filter((p) => p.featured).slice(0, 3);
 
   return (
     <div className="space-y-12 md:space-y-16 pb-12">
