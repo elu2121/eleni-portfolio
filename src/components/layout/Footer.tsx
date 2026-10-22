@@ -25,14 +25,16 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-2 space-y-4">
             <Link
               to="/"
-              className="inline-flex items-center gap-1.5 text-xl font-extrabold tracking-tight text-graphite-100 hover:text-white transition-colors group"
+              className="inline-flex items-center text-xl font-extrabold tracking-tight text-graphite-100 hover:text-white transition-colors group"
             >
-              <span className="font-mono text-gold-500 group-hover:scale-110 transition-transform">
+              <span className="font-mono text-gold-500 group-hover:scale-110 transition-transform mr-1">
                 &lt;
               </span>
-              <span>{profileConfig.wordmark.replace('.', '')}</span>
-              <span className="text-gold-500">.</span>
-              <span className="font-mono text-gold-500 group-hover:scale-110 transition-transform">
+              <span>
+                {profileConfig.wordmark.replace('.', '')}
+                <span className="text-gold-500">.</span>
+              </span>
+              <span className="font-mono text-gold-500 group-hover:scale-110 transition-transform ml-1">
                 /&gt;
               </span>
             </Link>

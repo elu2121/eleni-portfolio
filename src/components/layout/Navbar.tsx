@@ -48,18 +48,20 @@ export const Navbar: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-20">
+          <div className="flex items-center justify-between h-16">
             {/* Wordmark Branding (Gold Place #1: Logo brackets) */}
             <Link
               to="/"
-              className="flex items-center gap-1.5 text-xl sm:text-2xl font-extrabold tracking-tight text-graphite-100 hover:text-white transition-colors group"
+              className="flex items-center text-xl sm:text-2xl font-extrabold tracking-tight text-graphite-100 hover:text-white transition-colors group"
             >
-              <span className="font-mono text-gold-500 group-hover:scale-110 transition-transform">
+              <span className="font-mono text-gold-500 group-hover:scale-110 transition-transform mr-1">
                 &lt;
               </span>
-              <span>{profileConfig.wordmark.replace('.', '')}</span>
-              <span className="text-gold-500">.</span>
-              <span className="font-mono text-gold-500 group-hover:scale-110 transition-transform">
+              <span>
+                {profileConfig.wordmark.replace('.', '')}
+                <span className="text-gold-500">.</span>
+              </span>
+              <span className="font-mono text-gold-500 group-hover:scale-110 transition-transform ml-1">
                 /&gt;
               </span>
             </Link>
