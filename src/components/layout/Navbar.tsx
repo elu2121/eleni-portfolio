@@ -35,7 +35,7 @@ export const Navbar: React.FC = () => {
       {/* Skip to Main Content Link for Accessibility */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-4 z-50 px-4 py-2 bg-gold-500 text-graphite-950 font-semibold rounded-lg shadow-lg focus:outline-none"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-4 z-50 px-4 py-2 bg-emerald-500 text-graphite-950 font-semibold rounded-lg shadow-lg focus:outline-none"
       >
         Skip to main content
       </a>
@@ -49,24 +49,24 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Wordmark Branding (Gold Place #1: Logo brackets) */}
+            {/* Wordmark Branding (Graphite & Emerald Brand) */}
             <Link
               to="/"
               className="flex items-center text-xl sm:text-2xl font-extrabold tracking-tight text-graphite-100 hover:text-white transition-colors group"
             >
-              <span className="font-mono text-gold-500 group-hover:scale-110 transition-transform mr-1">
+              <span className="font-mono text-emerald-400 group-hover:scale-110 transition-transform mr-1">
                 &lt;
               </span>
               <span>
                 {profileConfig.wordmark.replace('.', '')}
-                <span className="text-gold-500">.</span>
+                <span className="text-emerald-400">.</span>
               </span>
-              <span className="font-mono text-gold-500 group-hover:scale-110 transition-transform ml-1">
+              <span className="font-mono text-emerald-400 group-hover:scale-110 transition-transform ml-1">
                 /&gt;
               </span>
             </Link>
 
-            {/* Desktop Navigation Links (text-sm, active: text-graphite-100 bg-graphite-800, no gold) */}
+            {/* Desktop Navigation Links */}
             <nav
               aria-label="Primary Navigation"
               className="hidden md:flex items-center gap-1 lg:gap-2 bg-graphite-900/70 border border-graphite-800/80 px-4 py-1.5 rounded-full"
@@ -79,7 +79,7 @@ export const Navbar: React.FC = () => {
                   className={({ isActive }) =>
                     `px-3.5 py-1.5 text-sm font-medium rounded-full transition-all duration-150 ${
                       isActive
-                        ? 'text-graphite-100 bg-graphite-800 shadow-sm'
+                        ? 'text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 shadow-sm'
                         : 'text-graphite-400 hover:text-graphite-100 hover:bg-graphite-850'
                     }`
                   }
@@ -89,11 +89,11 @@ export const Navbar: React.FC = () => {
               ))}
             </nav>
 
-            {/* Desktop Action (Outlined button, no duplicate availability status) */}
+            {/* Desktop Action */}
             <div className="hidden md:flex items-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-1.5 text-xs font-medium px-4 py-2 rounded-lg border border-graphite-700 text-graphite-100 hover:border-gold-500 hover:text-gold-400 bg-transparent transition-all active:translate-y-0.5"
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-4 py-2 rounded-lg border border-graphite-700 text-graphite-100 hover:border-emerald-500 hover:text-emerald-300 bg-transparent transition-all active:translate-y-0.5"
               >
                 <span>Let's Talk</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -107,10 +107,10 @@ export const Navbar: React.FC = () => {
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-expanded={isMobileMenuOpen}
                 aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-                className="p-2 rounded-lg text-graphite-300 hover:text-graphite-100 hover:bg-graphite-850 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+                className="p-2 rounded-lg text-graphite-300 hover:text-graphite-100 hover:bg-graphite-850 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-6 h-6 text-graphite-100" />
+                  <X className="w-6 h-6 text-emerald-400" />
                 ) : (
                   <Menu className="w-6 h-6" />
                 )}
@@ -132,13 +132,13 @@ export const Navbar: React.FC = () => {
                     className={({ isActive }) =>
                       `flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                         isActive
-                          ? 'bg-graphite-850 text-graphite-100 border border-graphite-750'
+                          ? 'bg-emerald-950/50 text-emerald-300 border border-emerald-500/30'
                           : 'text-graphite-400 hover:bg-graphite-850 hover:text-graphite-100'
                       }`
                     }
                   >
                     <span>{link.name}</span>
-                    <span className="text-xs text-graphite-500">→</span>
+                    <span className="text-xs text-emerald-400">→</span>
                   </NavLink>
                 ))}
               </nav>
@@ -146,7 +146,7 @@ export const Navbar: React.FC = () => {
               <div className="pt-2 border-t border-graphite-800/80">
                 <Link
                   to="/contact"
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-gold-500 hover:bg-gold-400 text-graphite-950 font-semibold text-sm transition-all"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-graphite-950 font-semibold text-sm transition-all"
                 >
                   <span>Let's Talk</span>
                   <ArrowUpRight className="w-4 h-4" />

@@ -41,14 +41,14 @@ export const PortraitPlaceholder: React.FC<PortraitPlaceholderProps> = ({
             {/* Center Monogram Avatar (Clean initials avatar with no instructions) */}
             <div className="flex flex-col items-center text-center my-auto py-4">
               <div className="relative mb-4">
-                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border border-graphite-700 bg-graphite-800 flex items-center justify-center p-2 shadow-inner">
+                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border border-graphite-700 bg-graphite-800 flex items-center justify-center p-2 shadow-inner group-hover:border-emerald-500/40 transition-colors">
                   <div className="w-full h-full rounded-full bg-graphite-850 border border-graphite-700/80 flex flex-col items-center justify-center">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-graphite-100 tracking-tight font-sans">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-graphite-100 tracking-tight font-sans group-hover:text-emerald-300 transition-colors">
                       EG
                     </span>
                   </div>
                 </div>
-                <div className="absolute -bottom-1 -right-1 bg-graphite-900 border border-graphite-700 rounded-full p-2 text-graphite-300 shadow-md">
+                <div className="absolute -bottom-1 -right-1 bg-graphite-900 border border-graphite-700 rounded-full p-2 text-emerald-400 shadow-md">
                   <Code2 className="w-3.5 h-3.5" />
                 </div>
               </div>

@@ -39,7 +39,7 @@ export const ServicesPage: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-16">
       {/* Header */}
       <div className="space-y-4 max-w-3xl">
-        <Badge variant="graphite">Technical Services</Badge>
+        <Badge variant="emerald">Technical Services</Badge>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-graphite-100 tracking-tight leading-tight">
           Software engineering & web development services.
         </h1>
@@ -53,20 +53,20 @@ export const ServicesPage: React.FC = () => {
         {servicesData.map((service, index) => (
           <div
             key={service.id}
-            className="p-8 rounded-2xl bg-graphite-850 border border-graphite-750 hover:border-graphite-600 transition-all flex flex-col justify-between group shadow-card"
+            className="p-8 rounded-2xl bg-graphite-850 border border-graphite-750 hover:border-emerald-500/40 hover:shadow-card-hover transition-all flex flex-col justify-between group shadow-card"
           >
             <div className="space-y-6">
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center shadow-sm group-hover:scale-105 group-hover:border-graphite-600 transition-all">
+                <div className="w-12 h-12 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center text-emerald-400 shadow-sm group-hover:scale-105 group-hover:border-emerald-500/40 transition-all">
                   {getServiceIcon(service.id)}
                 </div>
-                <span className="text-xs font-mono text-graphite-500">
+                <span className="text-xs font-mono text-emerald-400/80">
                   0{index + 1}
                 </span>
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-graphite-100 group-hover:text-white transition-colors mb-2">
+                <h3 className="text-xl font-bold text-graphite-100 group-hover:text-emerald-300 transition-colors mb-2">
                   {service.title}
                 </h3>
                 <p className="text-sm text-graphite-300 leading-relaxed mb-4">
@@ -76,13 +76,13 @@ export const ServicesPage: React.FC = () => {
 
               {/* Deliverables */}
               <div className="space-y-2.5">
-                <span className="text-xs font-mono uppercase tracking-wider text-graphite-300 font-semibold block">
+                <span className="text-xs font-mono uppercase tracking-wider text-emerald-300 font-semibold block">
                   Expected Deliverables
                 </span>
                 <ul className="space-y-2 text-xs sm:text-sm text-graphite-300">
                   {service.deliverables.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-graphite-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -91,14 +91,14 @@ export const ServicesPage: React.FC = () => {
 
               {/* Technologies */}
               <div className="space-y-1.5 pt-2">
-                <span className="text-xs font-mono uppercase tracking-wider text-graphite-500 block">
+                <span className="text-xs font-mono uppercase tracking-wider text-graphite-400 block">
                   Tech Stack
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {service.technologies.map((t) => (
                     <span
                       key={t}
-                      className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-graphite-900 text-graphite-300 border border-graphite-750"
+                      className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-graphite-900 text-graphite-300 border border-graphite-750 hover:border-emerald-500/40 hover:text-emerald-300 transition-colors"
                     >
                       {t}
                     </span>
@@ -108,7 +108,7 @@ export const ServicesPage: React.FC = () => {
 
               {/* Ideal for note */}
               <div className="p-3.5 rounded-lg bg-graphite-900 border border-graphite-800 text-xs text-graphite-400">
-                <strong className="text-graphite-300 font-mono">Best suited for:</strong> {service.idealFor}
+                <strong className="text-graphite-200 font-mono">Best suited for:</strong> {service.idealFor}
               </div>
             </div>
 
@@ -131,13 +131,13 @@ export const ServicesPage: React.FC = () => {
       </div>
 
       {/* Honest Scope & Collaboration Notice */}
-      <div className="p-6 rounded-2xl bg-graphite-850 border border-graphite-750 space-y-2">
+      <div className="p-6 rounded-2xl bg-graphite-850 border border-emerald-500/20 space-y-2">
         <h4 className="text-sm font-bold text-graphite-200 flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-graphite-400" />
+          <Sparkles className="w-4 h-4 text-emerald-400" />
           <span>Engineering Integrity & Scope Notice</span>
         </h4>
         <p className="text-xs text-graphite-400 leading-relaxed font-mono">
-          All service scopes are adjusted to match project requirements and timeline. I provide transparent estimations, clear weekly communication, and thoroughly documented code. You can edit any service or add customized offerings in <code className="text-graphite-300">src/data/servicesData.ts</code>.
+          All service scopes are adjusted to match project requirements and timeline. I provide transparent estimations, clear weekly communication, and thoroughly documented code. You can edit any service or add customized offerings in <code className="text-emerald-400">src/data/servicesData.ts</code>.
         </p>
       </div>
 
@@ -153,7 +153,7 @@ export const ServicesPage: React.FC = () => {
         </div>
         <Button
           to="/contact"
-          variant="secondary"
+          variant="primary"
           size="lg"
           icon={<ArrowRight className="w-4 h-4" />}
         >

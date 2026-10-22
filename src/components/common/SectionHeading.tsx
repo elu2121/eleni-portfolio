@@ -30,7 +30,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     >
       {badge && (
         <div className={`mb-2.5 ${isCenter ? 'flex justify-center' : ''}`}>
-          <Badge variant="graphite">{badge}</Badge>
+          <Badge variant="emerald">{badge}</Badge>
         </div>
       )}
 
@@ -39,7 +39,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-graphite-100">
             {title}{' '}
             {highlight && (
-              <span className="text-graphite-200 relative inline-block">
+              <span className="text-emerald-400 relative inline-block">
                 {highlight}
               </span>
             )}

@@ -9,7 +9,7 @@
   --card: #131929;
   --text: #F2EEE6;
   --muted: #A9B2C3;
-  --gold: #C9A96A;
+  --accent: #10B981;
   color-scheme: dark;
 }
 
@@ -40,13 +40,13 @@ h1 {
     border: 2px solid #0B0F1A;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #222B42;
+    background: #1A2236;
   }
 
-  /* Accessible focus indicators with gold */
+  /* Accessible focus indicators with emerald */
   *:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #C9A96A, 0 0 0 4px #0B0F1A;
+    box-shadow: 0 0 0 2px #10B981, 0 0 0 4px #0B0F1A;
   }
 }
 

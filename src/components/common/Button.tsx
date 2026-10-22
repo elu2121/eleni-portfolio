@@ -34,13 +34,13 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantClasses = {
     primary:
-      'bg-gold-500 hover:bg-gold-400 text-graphite-950 font-semibold shadow-sm active:translate-y-0.5',
+      'bg-emerald-500 hover:bg-emerald-400 text-graphite-950 font-semibold shadow-sm hover:shadow-emerald-sm active:translate-y-0.5',
     secondary:
-      'bg-graphite-850 hover:bg-graphite-800 text-graphite-100 border border-graphite-750 hover:border-graphite-600 active:translate-y-0.5',
+      'bg-graphite-850 hover:bg-graphite-800 text-graphite-100 border border-graphite-750 hover:border-emerald-500/40 active:translate-y-0.5',
     outline:
-      'border border-graphite-700 hover:border-gold-500 text-graphite-100 hover:text-gold-400 hover:bg-graphite-850/60 active:translate-y-0.5',
+      'border border-graphite-700 hover:border-emerald-500 text-graphite-100 hover:text-emerald-300 hover:bg-graphite-850/60 active:translate-y-0.5',
     ghost:
-      'text-graphite-300 hover:text-graphite-100 hover:bg-graphite-850/60 active:translate-y-0.5',
+      'text-graphite-300 hover:text-emerald-300 hover:bg-graphite-850/60 active:translate-y-0.5',
   }[variant];
 
   const combinedClasses = `${baseClasses} ${sizeClasses} ${variantClasses} ${className}`;

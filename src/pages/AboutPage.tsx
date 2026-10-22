@@ -79,12 +79,10 @@ export const AboutPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
           {/* Left Column: Personal Introduction & Headline */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-graphite-900 border border-graphite-800 text-xs font-sans text-graphite-300 shadow-sm">
-              <span className="font-semibold text-graphite-200">Hi, I'm Eleni.</span>
-            </div>
+            <Badge variant="emerald">Hi, I'm Eleni.</Badge>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-graphite-100 leading-[1.14]">
-              I turn ideas into digital experiences.
+              I turn ideas into <span className="text-emerald-400">digital experiences.</span>
             </h1>
 
             <div className="space-y-4 text-base sm:text-lg text-graphite-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
@@ -100,7 +98,7 @@ export const AboutPage: React.FC = () => {
             <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
               <Button
                 to="/projects"
-                variant="secondary"
+                variant="primary"
                 size="lg"
                 icon={<ArrowRight className="w-4 h-4" />}
               >
@@ -109,7 +107,7 @@ export const AboutPage: React.FC = () => {
 
               <Button
                 to="/contact"
-                variant="outline"
+                variant="secondary"
                 size="lg"
                 icon={<Mail className="w-4 h-4" />}
               >
@@ -140,20 +138,20 @@ export const AboutPage: React.FC = () => {
           {journeyMilestones.map((milestone, idx) => (
             <div
               key={idx}
-              className="group p-6 sm:p-8 rounded-2xl bg-graphite-850 border border-graphite-750 hover:border-graphite-600 transition-all duration-300 shadow-card hover:shadow-card-hover flex flex-col justify-between space-y-4"
+              className="group p-6 sm:p-8 rounded-2xl bg-graphite-850 border border-graphite-750 hover:border-emerald-500/40 transition-all duration-300 shadow-card hover:shadow-card-hover flex flex-col justify-between space-y-4"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-11 h-11 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center group-hover:border-graphite-600 group-hover:scale-105 transition-all">
+                  <div className="w-11 h-11 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center text-emerald-400 group-hover:border-emerald-500/40 group-hover:scale-105 transition-all">
                     {getJourneyIcon(idx)}
                   </div>
-                  <span className="text-[11px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-graphite-900 text-graphite-400 border border-graphite-750/80">
+                  <span className="text-[11px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">
                     {milestone.tag}
                   </span>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-graphite-100 group-hover:text-white transition-colors">
+                  <h3 className="text-xl font-bold text-graphite-100 group-hover:text-emerald-300 transition-colors">
                     {milestone.title}
                   </h3>
                   <p className="text-xs font-mono text-graphite-400 mt-1">
@@ -185,11 +183,11 @@ export const AboutPage: React.FC = () => {
           {technicalSkillsGrouped.map((group) => (
             <div
               key={group.category}
-              className="p-6 rounded-2xl bg-graphite-850 border border-graphite-750 hover:border-graphite-600 transition-all duration-300 flex flex-col justify-between space-y-5"
+              className="p-6 rounded-2xl bg-graphite-850 border border-graphite-750 hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between space-y-5"
             >
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center text-emerald-400">
                     {getCategoryIcon(group.category)}
                   </div>
                   <div>
@@ -207,7 +205,7 @@ export const AboutPage: React.FC = () => {
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-graphite-900 text-graphite-200 border border-graphite-750 hover:border-graphite-600 hover:text-white transition-all cursor-default"
+                      className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-graphite-900 text-graphite-200 border border-graphite-750 hover:border-emerald-500/40 hover:text-emerald-300 transition-all cursor-default"
                     >
                       {skill}
                     </span>
@@ -234,9 +232,9 @@ export const AboutPage: React.FC = () => {
           {beyondTheCodeItems.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-graphite-850 border border-graphite-750 hover:border-graphite-600 transition-all duration-300 space-y-3"
+              className="p-6 rounded-2xl bg-graphite-850 border border-graphite-750 hover:border-emerald-500/40 transition-all duration-300 space-y-3"
             >
-              <div className="w-10 h-10 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center text-emerald-400">
                 {getBeyondIcon(idx)}
               </div>
               <h3 className="text-base font-bold text-graphite-100">
@@ -255,10 +253,10 @@ export const AboutPage: React.FC = () => {
           ========================================================================= */}
       <section className="rounded-3xl bg-graphite-850 border border-graphite-750 p-8 sm:p-12 lg:p-16 relative overflow-hidden">
         <div className="max-w-3xl space-y-6 relative z-10">
-          <Badge variant="graphite">Let's Build Together</Badge>
+          <Badge variant="emerald">Let's Build Together</Badge>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-graphite-100 tracking-tight leading-tight">
-            Turning complex problems into elegant digital experiences.
+            Turning complex problems into <span className="text-emerald-400">elegant digital experiences.</span>
           </h2>
 
           <p className="text-base sm:text-lg text-graphite-300 leading-relaxed font-normal">
@@ -267,21 +265,21 @@ export const AboutPage: React.FC = () => {
 
           <div className="pt-2 flex flex-wrap items-center gap-4">
             <Button
+              to="/projects"
+              variant="primary"
+              size="lg"
+              icon={<ArrowRight className="w-4 h-4" />}
+            >
+              Explore Projects
+            </Button>
+
+            <Button
               to="/contact"
               variant="secondary"
               size="lg"
               icon={<Mail className="w-4 h-4" />}
             >
               Get in Touch
-            </Button>
-
-            <Button
-              to="/projects"
-              variant="outline"
-              size="lg"
-              icon={<ArrowRight className="w-4 h-4" />}
-            >
-              Explore Projects
             </Button>
           </div>
         </div>

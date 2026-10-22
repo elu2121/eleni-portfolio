@@ -130,7 +130,7 @@ export const ContactPage: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-16">
       {/* Header */}
       <div className="space-y-4 max-w-3xl">
-        <Badge variant="graphite">Get In Touch</Badge>
+        <Badge variant="emerald">Get In Touch</Badge>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-graphite-100 tracking-tight leading-tight">
           Let's discuss opportunities, collaborations, or projects.
         </h1>
@@ -161,7 +161,7 @@ export const ContactPage: React.FC = () => {
                   htmlFor="contact-name"
                   className="block text-xs font-mono uppercase tracking-wider text-graphite-300 font-semibold"
                 >
-                  Your Name <span className="text-graphite-400">*</span>
+                  Your Name <span className="text-emerald-400">*</span>
                 </label>
                 <input
                   id="contact-name"
@@ -177,7 +177,7 @@ export const ContactPage: React.FC = () => {
                   className={`w-full px-4 py-3 rounded-lg bg-graphite-950 text-graphite-100 text-sm border transition-colors focus:outline-none ${
                     errors.name
                       ? 'border-red-500/80 focus:border-red-500'
-                      : 'border-graphite-750 focus:border-graphite-500'
+                      : 'border-graphite-750 focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/30'
                   }`}
                 />
                 {errors.name && (
@@ -194,7 +194,7 @@ export const ContactPage: React.FC = () => {
                   htmlFor="contact-email"
                   className="block text-xs font-mono uppercase tracking-wider text-graphite-300 font-semibold"
                 >
-                  Your Email Address <span className="text-graphite-400">*</span>
+                  Your Email Address <span className="text-emerald-400">*</span>
                 </label>
                 <input
                   id="contact-email"
@@ -210,7 +210,7 @@ export const ContactPage: React.FC = () => {
                   className={`w-full px-4 py-3 rounded-lg bg-graphite-950 text-graphite-100 text-sm border transition-colors focus:outline-none ${
                     errors.email
                       ? 'border-red-500/80 focus:border-red-500'
-                      : 'border-graphite-750 focus:border-graphite-500'
+                      : 'border-graphite-750 focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/30'
                   }`}
                 />
                 {errors.email && (
@@ -227,7 +227,7 @@ export const ContactPage: React.FC = () => {
                   htmlFor="contact-subject"
                   className="block text-xs font-mono uppercase tracking-wider text-graphite-300 font-semibold"
                 >
-                  Subject <span className="text-graphite-400">*</span>
+                  Subject <span className="text-emerald-400">*</span>
                 </label>
                 <input
                   id="contact-subject"
@@ -243,7 +243,7 @@ export const ContactPage: React.FC = () => {
                   className={`w-full px-4 py-3 rounded-lg bg-graphite-950 text-graphite-100 text-sm border transition-colors focus:outline-none ${
                     errors.subject
                       ? 'border-red-500/80 focus:border-red-500'
-                      : 'border-graphite-750 focus:border-graphite-500'
+                      : 'border-graphite-750 focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/30'
                   }`}
                 />
                 {errors.subject && (
@@ -260,7 +260,7 @@ export const ContactPage: React.FC = () => {
                   htmlFor="contact-message"
                   className="block text-xs font-mono uppercase tracking-wider text-graphite-300 font-semibold"
                 >
-                  Message <span className="text-graphite-400">*</span>
+                  Message <span className="text-emerald-400">*</span>
                 </label>
                 <textarea
                   id="contact-message"
@@ -276,7 +276,7 @@ export const ContactPage: React.FC = () => {
                   className={`w-full px-4 py-3 rounded-lg bg-graphite-950 text-graphite-100 text-sm border transition-colors focus:outline-none resize-y ${
                     errors.message
                       ? 'border-red-500/80 focus:border-red-500'
-                      : 'border-graphite-750 focus:border-graphite-500'
+                      : 'border-graphite-750 focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/30'
                   }`}
                 />
                 {errors.message && (
@@ -289,7 +289,7 @@ export const ContactPage: React.FC = () => {
 
               {/* Notice regarding demonstration mode */}
               <div className="p-3.5 rounded-lg bg-graphite-900 border border-graphite-750 text-xs text-graphite-400 font-mono flex items-start gap-2.5">
-                <Info className="w-4 h-4 text-graphite-400 shrink-0 mt-0.5" />
+                <Info className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span>
                   Notice: This form validates client-side and compiles your message. Upon submission, you will be given an instant 1-click option to send via your email client or copy the message.
                 </span>
@@ -299,11 +299,11 @@ export const ContactPage: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3.5 px-6 rounded-lg bg-graphite-800 hover:bg-graphite-750 text-graphite-100 border border-graphite-700 font-semibold text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
+                className="w-full py-3.5 px-6 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-graphite-950 font-semibold text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer shadow-sm hover:shadow-emerald-sm"
               >
                 {isSubmitting ? (
                   <>
-                    <span className="w-4 h-4 border-2 border-graphite-100 border-t-transparent rounded-full animate-spin" />
+                    <span className="w-4 h-4 border-2 border-graphite-950 border-t-transparent rounded-full animate-spin" />
                     <span>Processing Message...</span>
                   </>
                 ) : (
@@ -319,8 +319,8 @@ export const ContactPage: React.FC = () => {
                HONEST POST-SUBMISSION CONFIRMATION
                ========================================================================= */
             <div className="space-y-6 animate-in fade-in duration-300">
-              <div className="p-4 rounded-xl bg-graphite-900 border border-graphite-750 flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-graphite-200 shrink-0 mt-0.5" />
+              <div className="p-4 rounded-xl bg-graphite-900 border border-emerald-500/30 flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-lg font-bold text-graphite-100">
                     Message Prepared Successfully!
@@ -348,7 +348,7 @@ export const ContactPage: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <a
                   href={generateMailtoUrl(submittedData)}
-                  className="flex-1 py-3 px-4 rounded-lg bg-graphite-800 hover:bg-graphite-750 text-graphite-100 border border-graphite-700 font-semibold text-xs sm:text-sm text-center flex items-center justify-center gap-2 transition-all"
+                  className="flex-1 py-3 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-graphite-950 font-semibold text-xs sm:text-sm text-center flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-emerald-sm"
                 >
                   <Send className="w-4 h-4" />
                   <span>Open in Your Email Client</span>
@@ -357,12 +357,12 @@ export const ContactPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleCopyCompiledMessage}
-                  className="py-3 px-4 rounded-lg bg-graphite-850 hover:bg-graphite-800 text-graphite-100 border border-graphite-750 text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                  className="py-3 px-4 rounded-lg bg-graphite-850 hover:bg-graphite-800 text-graphite-100 border border-graphite-750 hover:border-emerald-500/40 text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
                   {copiedMessage ? (
                     <>
-                      <Check className="w-4 h-4 text-graphite-200" />
-                      <span>Copied to Clipboard!</span>
+                      <Check className="w-4 h-4 text-emerald-400" />
+                      <span className="text-emerald-300">Copied to Clipboard!</span>
                     </>
                   ) : (
                     <>
@@ -385,7 +385,7 @@ export const ContactPage: React.FC = () => {
                       message: '',
                     });
                   }}
-                  className="text-xs font-mono text-graphite-300 hover:underline cursor-pointer"
+                  className="text-xs font-mono text-emerald-400 hover:text-emerald-300 hover:underline cursor-pointer"
                 >
                   ← Compose Another Message
                 </button>
@@ -410,7 +410,7 @@ export const ContactPage: React.FC = () => {
               {/* Email */}
               <div className="p-4 rounded-xl bg-graphite-900 border border-graphite-750/80 flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="w-9 h-9 rounded-lg bg-graphite-800 flex items-center justify-center text-graphite-300 shrink-0">
+                  <div className="w-9 h-9 rounded-lg bg-graphite-800 flex items-center justify-center text-emerald-400 shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="overflow-hidden">
@@ -419,7 +419,7 @@ export const ContactPage: React.FC = () => {
                     </span>
                     <a
                       href={`mailto:${profileConfig.contact.email}`}
-                      className="text-xs sm:text-sm font-semibold text-graphite-200 hover:text-white truncate block"
+                      className="text-xs sm:text-sm font-semibold text-graphite-200 hover:text-emerald-300 truncate block"
                     >
                       {profileConfig.contact.email}
                     </a>
@@ -430,9 +430,9 @@ export const ContactPage: React.FC = () => {
                   type="button"
                   onClick={handleCopyEmail}
                   title="Copy email address"
-                  className="p-2 rounded-lg bg-graphite-800 text-graphite-400 hover:text-white hover:bg-graphite-750 transition-colors shrink-0 cursor-pointer"
+                  className="p-2 rounded-lg bg-graphite-800 text-graphite-400 hover:text-white hover:bg-graphite-750 hover:border-emerald-500/40 border border-transparent transition-colors shrink-0 cursor-pointer"
                 >
-                  {copiedEmail ? <Check className="w-4 h-4 text-graphite-200" /> : <Copy className="w-4 h-4" />}
+                  {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
 
@@ -441,22 +441,22 @@ export const ContactPage: React.FC = () => {
                 href={profileConfig.contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-graphite-900 border border-graphite-750/80 flex items-center justify-between gap-3 hover:border-graphite-650 transition-colors group"
+                className="p-4 rounded-xl bg-graphite-900 border border-graphite-750/80 flex items-center justify-between gap-3 hover:border-emerald-500/40 transition-colors group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-graphite-800 flex items-center justify-center text-graphite-300 shrink-0 group-hover:scale-105 transition-transform">
+                  <div className="w-9 h-9 rounded-lg bg-graphite-800 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 transition-transform">
                     <LinkedinIcon className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-[10px] font-mono text-graphite-500 uppercase block">
                       LinkedIn Profile
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-graphite-200 group-hover:text-white transition-colors">
+                    <span className="text-xs sm:text-sm font-semibold text-graphite-200 group-hover:text-emerald-300 transition-colors">
                       Connect on LinkedIn
                     </span>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-graphite-500 group-hover:text-white transition-colors" />
+                <ExternalLink className="w-4 h-4 text-graphite-500 group-hover:text-emerald-400 transition-colors" />
               </a>
 
               {/* GitHub */}
@@ -464,33 +464,33 @@ export const ContactPage: React.FC = () => {
                 href={profileConfig.contact.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-graphite-900 border border-graphite-750/80 flex items-center justify-between gap-3 hover:border-graphite-650 transition-colors group"
+                className="p-4 rounded-xl bg-graphite-900 border border-graphite-750/80 flex items-center justify-between gap-3 hover:border-emerald-500/40 transition-colors group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-graphite-800 flex items-center justify-center text-graphite-300 shrink-0 group-hover:scale-105 transition-transform">
+                  <div className="w-9 h-9 rounded-lg bg-graphite-800 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 transition-transform">
                     <GithubIcon className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-[10px] font-mono text-graphite-500 uppercase block">
                       GitHub Repositories
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-graphite-200 group-hover:text-white transition-colors">
+                    <span className="text-xs sm:text-sm font-semibold text-graphite-200 group-hover:text-emerald-300 transition-colors">
                       Browse Code & Activity
                     </span>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-graphite-500 group-hover:text-white transition-colors" />
+                <ExternalLink className="w-4 h-4 text-graphite-500 group-hover:text-emerald-400 transition-colors" />
               </a>
             </div>
 
             {/* Availability details */}
             <div className="pt-4 border-t border-graphite-800 space-y-3 text-xs font-mono text-graphite-400">
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-graphite-400" />
+                <Clock className="w-4 h-4 text-emerald-400" />
                 <span>Response Time: Usually within 24–48 hours</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-graphite-400" />
+                <MapPin className="w-4 h-4 text-emerald-400" />
                 <span>{profileConfig.contact.locationNote}</span>
               </div>
             </div>
